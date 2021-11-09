@@ -1,46 +1,36 @@
 import {Button, Tab, VerticalTabs} from "mfc-core";
 import styles from "../styles/Home.module.css";
+import {Feedback, Navigation} from "@material-ui/icons";
+import Theming from "../components/theming/Theming";
+import Misc from "../components/misc/Misc";
+import Inputs from "../components/inputs/Inputs";
+import GettingStarted from "../components/gs/GettingStarted";
 
 export default function Home() {
     return (
         <VerticalTabs className={styles.verticalTabs}>
-            <Tab className={styles.tab} group={'Getting Started'} label={'Installation'}>
-                cafe
-            </Tab>
-            <Tab className={styles.tab} group={'Getting Started'} label={'Usage'}>
-                cafe
-            </Tab>
-            <Tab className={styles.tab} group={'Getting Started'} label={'Examples'}>
-                cafe
-            </Tab>
-            <Tab className={styles.tab} group={'Getting Started'} label={'FAQs'}>
-                cafe
-            </Tab>
-            <Tab className={styles.tab} group={'Getting Started'} label={'Supported Platforms'}>
-                cafe
-            </Tab>
-            <Tab className={styles.tab} group={'Getting Started'} label={'Support'}>
-                cafe
+            <Tab className={styles.tab} label={'Getting Started'}>
+                <GettingStarted/>
             </Tab>
 
 
             <Tab className={styles.tab} group={'Components'} label={'Inputs'}>
-                cafe
+                <Inputs/>
             </Tab>
             <Tab className={styles.tab} group={'Components'} label={'Feedback'}>
-                cafe
+                <Feedback/>
             </Tab>
             <Tab className={styles.tab} group={'Components'} label={'Visualization'}>
-                cafe
+
             </Tab>
             <Tab className={styles.tab} group={'Components'} label={'Navigation'}>
-                cafe
+                <Navigation/>
             </Tab>
             <Tab className={styles.tab} group={'Components'} label={'Theming'}>
-                cafe
+                <Theming/>
             </Tab>
             <Tab className={styles.tab} group={'Components'} label={'Misc'}>
-                cafe
+                <Misc/>
             </Tab>
         </VerticalTabs>
     )
