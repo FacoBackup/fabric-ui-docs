@@ -1,11 +1,10 @@
 import '../styles/globals.css'
-import {Layout, Tab, VerticalTabs} from "mfc-core";
 import styles from '../styles/Home.module.css'
 import {useEffect, useState} from "react";
 import Router from 'next/router';
 import ThemeProvider from "../components/core/misc/theme/ThemeProvider";
 import "@fontsource/roboto";
-
+import Layout from '../components/core/navigation/layout/Layout'
 function Mfc({Component, pageProps}) {
     const [loading, setLoading] = useState(false)
     useEffect(() => {
@@ -16,7 +15,7 @@ function Mfc({Component, pageProps}) {
     })
     return (
         <ThemeProvider>
-            <Layout appName={'Tyiioh components'} loading={false} logo={''}>
+            <Layout appName={'mfc components'} loading={false}>
                 <div className={styles.wrapper}>
                     <Component {...pageProps} />
                 </div>
