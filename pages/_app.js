@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.css'
 import {useEffect, useState} from "react";
 import Router from 'next/router';
 import ThemeProvider from "../components/core/misc/theme/ThemeProvider";
+import "@fontsource/roboto";
 
 function Mfc({Component, pageProps}) {
     const [loading, setLoading] = useState(false)
@@ -15,10 +16,8 @@ function Mfc({Component, pageProps}) {
     })
     return (
         <ThemeProvider>
-            <Layout appName={'MFC documentation'} loading={false} logo={''}>
+            <Layout appName={'Tyiioh components'} loading={false} logo={''}>
                 <div className={styles.wrapper}>
-
-
                     <Component {...pageProps} />
                 </div>
             </Layout>

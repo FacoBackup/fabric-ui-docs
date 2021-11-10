@@ -12,9 +12,15 @@
 
     width: 100%;
     padding: 8px;
+    overflow-y: auto;
 }
 
 .tab {
     width: 100%;
     padding: 0 10%;
+}
+.tabs{
+    display: grid;
+    gap: 16px;
+    padding-bottom: 10vh;
 }

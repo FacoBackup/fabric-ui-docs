@@ -1,10 +1,11 @@
-import {Button, Tab, VerticalTabs} from "mfc-core";
+import {Button, Tab} from "mfc-core";
 import styles from "../styles/Home.module.css";
 import {Feedback, Navigation} from "@material-ui/icons";
 import Theming from "../components/theming/Theming";
 import Misc from "../components/misc/Misc";
 import Inputs from "../components/inputs/Inputs";
 import GettingStarted from "../components/gs/GettingStarted";
+import VerticalTabs from "../components/core/navigation/tabs/VerticalTabs";
 
 export default function Home() {
     return (
@@ -12,8 +13,6 @@ export default function Home() {
             <Tab className={styles.tab} label={'Getting Started'}>
                 <GettingStarted/>
             </Tab>
-
-
             <Tab className={styles.tab} group={'Components'} label={'Inputs'}>
                 <Inputs/>
             </Tab>
