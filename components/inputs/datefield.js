@@ -1,47 +1,199 @@
+import DateField from "../core/inputs/date/DateField";
+import React, {useState} from "react";
+
 export default function datefield() {
-    return [{
-        headers: [
-            {
-                content: 'npm installation',
-                type: 'primary'
-            },
-            {
-                content: 'Follow the instructions bellow for a easy way to install the package on your current React project.',
-                type: 'tertiary'
-            }
-        ],
-        body: [
-            {
-                content: 'To complete the installation of <b>mfc-core</b> you first need to add the peer dependencies to your <b>package.json</b>:',
-                type: 'text'
-            },
-            {
-                content: '' +
-                    '// with npm\n' +
-                    'npm install @material-ui/core @material-ui/icons axios react-input-mask\n' +
-                    '\n' +
-                    '// with yarn\n' +
-                    'yarn add @material-ui/core @material-ui/icons axios react-input-mask',
+    const [date, setDate] = useState(undefined)
+    const example = (
+        <>
+            <DateField handleChange={(event) => setDate(event)} value={date} label={'Default'} width={'30%'}/>
+            <DateField handleChange={(event) => setDate(event)} value={date} label={'Required'} required={true}
+                       width={'30%'}/>
+            <DateField handleChange={(event) => setDate(event)} value={date} label={'Disabled'} width={'30%'} disabled={true}/>
+        </>
+    )
+    const variants = (
+        <>
+            <DateField handleChange={(event) => console.log(event)} value={new Date().toLocaleDateString()}
+                       label={'yyyy-dd-mm'} pattern={'yyyy-dd-mm'} width={'30%'}/>
+            <DateField handleChange={(event) => console.log(event)} value={new Date().toLocaleDateString()}
+                       label={'yyyy-mm-dd'} pattern={'yyyy-mm-dd'} width={'30%'}/>
 
-                type: 'pre-formatted',
-                float: 'stretch'
-            },
-            {
-                content: 'After the installation is completed you can install the package itself by running:',
-                type: 'text'
-            },
-            {
-                content: '' +
-                    '// with npm\n' +
-                    'npm install mfc-core\n' +
-                    '\n' +
-                    '// with yarn\n' +
-                    'yarn add mfc-core',
+            <DateField handleChange={(event) => console.log(event)} value={new Date().toLocaleDateString()}
+                       label={'yyyy/dd/mm'} pattern={'yyyy/dd/mm'} width={'30%'}/>
+            <DateField handleChange={(event) => console.log(event)} value={new Date().toLocaleDateString()}
+                       label={'yyyy/mm/dd'} pattern={'yyyy/mm/dd'} width={'30%'}/>
 
-                type: 'pre-formatted',
-                float: 'stretch'
-            },
-        ],
-        alert: '<b>Warning</b>: this is not a production ready package, it is still in deep development and many things may change overtime.',
-    }]
+            <DateField handleChange={(event) => console.log(event)} value={new Date().toLocaleDateString()}
+                       label={'dd-mm-yyyy'} pattern={'dd-mm-yyyy'} width={'30%'}/>
+            <DateField handleChange={(event) => console.log(event)} value={new Date().toLocaleDateString()}
+                       label={'dd/mm/yyyy'} pattern={'dd/mm/yyyy'} width={'30%'}/>
+
+            <DateField handleChange={(event) => console.log(event)} value={new Date().toLocaleDateString()}
+                       label={'dd-mm-yyyy'} pattern={'dd-mm-yyyy'} width={'30%'}/>
+            <DateField handleChange={(event) => console.log(event)} value={new Date().toLocaleDateString()}
+                       label={'dd/mm/yyyy'} pattern={'dd/mm/yyyy'} width={'30%'}/>
+
+            <DateField handleChange={(event) => console.log(event)} value={new Date().toLocaleDateString()}
+                       label={'mm-dd-yyyy'} pattern={'mm-dd-yyyy'} width={'30%'}/>
+            <DateField handleChange={(event) => console.log(event)} value={new Date().toLocaleDateString()}
+                       label={'mm/dd/yyyy'} pattern={'mm/dd/yyyy'} width={'30%'}/>
+        </>
+    )
+    const sizeVariants = (
+        <>
+            <DateField handleChange={(event) => console.log(event)}
+                       label={'Default variant'} width={'30%'} size={'default'}/>
+            <DateField handleChange={(event) => console.log(event)}
+                       label={'Small variant'} width={'30%'} size={'small'}/>
+            <DateField handleChange={(event) => console.log(event)}
+                       label={'Custom css width'} width={'calc(30% + 0.5px)'}/>
+        </>
+    )
+    const basicProps = (
+        <React.Fragment>
+            <DateField label={'Label prop'} disabled={true} width={'30%'} size={'default'} value={'01/01/2000'}  handleChange={() => null}/>
+        </React.Fragment>
+    )
+    return [
+        {
+            headers: [
+                {
+                    content: 'Usage',
+                    type: 'primary'
+                },
+                {
+                    content: 'The DateField input is a versitile way to input data into your system.',
+                    type: 'tertiary'
+                }
+            ],
+            body: [
+                {
+                    content: `The DateField input is a complete package for managing dates, from parsing a value with a different format to validating the inputted data.<br>
+                        In the example below you can see the two modes of interaction, the default one (not required) and the required one.<br>`,
+                    type: 'text'
+                },
+                {
+                    content: (
+                        <div style={{display: 'flex', flexFlow: 'row wrap', columnGap: '16px', rowGap: '4px'}}>
+                            {example}
+                        </div>
+                    ),
+                    type: 'native-code',
+                },
+                {content: `<b>Note:</b> The default variant is the not required one.`, type: 'text'},
+                {
+                    content: example,
+                    type: 'code',
+                    float: 'stretch'
+                }
+            ]
+        },
+        {
+            headers: [
+                {
+                    content: 'Basic props',
+                    type: 'primary'
+                },
+                {
+                    content: 'For basic configuration purposes.',
+                    type: 'tertiary'
+                }
+            ],
+            body: [
+                {
+                    content: `Since dates come at different formats, the DateField input comes with a prop for setting up patters named <b><i>pattern</i></b>, e.g. :`,
+                    type: 'text'
+                },
+                {
+                    content: (
+                        <div style={{display: 'flex', flexFlow: 'row wrap', columnGap: '16px', rowGap: '4px'}}>
+                            {basicProps}
+                        </div>
+                    ),
+                    type: 'native-code',
+                },
+                {
+                    content: `<b>Note:</b> The <b><i>handleChange</i></b> prop <b>is required</b>.`,
+                    type: 'text'
+                },
+                {
+                    content: basicProps,
+                    type: 'code',
+                    float: 'stretch'
+                }
+            ]
+        },
+        {
+            headers: [
+                {
+                    content: 'Patterns',
+                    type: 'primary'
+                }
+            ],
+            body: [
+                {
+                    content: `Since dates come at different formats, the DateField input comes with a prop for setting up patters named <b><i>pattern</i></b>, e.g. :`,
+                    type: 'text'
+                },
+                {
+                    content: (
+                        <div style={{display: 'flex', flexFlow: 'row wrap', columnGap: '16px', rowGap: '4px'}}>
+                            {variants}
+                        </div>
+                    ),
+                    type: 'native-code',
+                },
+                {
+                    content: `<b>Note:</b> The <b><i>pattern</i></b> prop is not required and by default the pattern will be <b>dd/mm/yyyy</b>.`,
+                    type: 'text'
+                },
+                {
+                    content: variants,
+                    type: 'code',
+                    float: 'stretch'
+                }
+            ]
+        },
+        {
+            headers: [
+                {
+                    content: 'Dimensions',
+                    type: 'primary'
+                }
+            ],
+            body: [
+                {
+                    content: `The input supports two types of sizing, being those:`,
+                    type: 'text'
+                },
+                {
+                    content: `Vertical with <b><i>size</i></b>="small"or <b><i>size</i></b>="default". <br>
+                              Horizontal with <b><i>width</i></b>="css width property".
+`,
+                    type: 'text'
+                },
+                {
+                    content: `Since dates come at different formats, the DateField input comes with a prop for setting up patters named <b>pattern</b>, e.g. :`,
+                    type: 'text'
+                },
+                {
+                    content: (
+                        <div style={{display: 'flex', flexFlow: 'row wrap', columnGap: '16px', rowGap: '4px'}}>
+                            {sizeVariants}
+                        </div>
+                    ),
+                    type: 'native-code',
+                },
+                {
+                    content: `<b>Note:</b> Both <b><i>size</i></b> and <b><i>width</i></b> props are <b>not</b> required and will default to "default" and "inherit" respectively`,
+                    type: 'text'
+                },
+                {
+                    content: sizeVariants,
+                    type: 'code',
+                    float: 'stretch'
+                }
+            ]
+        }
+    ]
 }

@@ -16,33 +16,33 @@ import {Tab, Tabs} from "mfc-core";
 export default function Inputs() {
     return (
         <Tabs className={styles.tabs}>
-            <Tab label={'Button'}>
-                <Article data={button()}/>
+            <Tab label={'Button'} className={styles.baseTab}>
+                <Article data={button()} className={styles.article}/>
             </Tab>
 
-            <Tab label={'Checkbox'}>
-                <Article data={checkbox()}/>
+            <Tab label={'Checkbox'} className={styles.baseTab}>
+                <Article data={checkbox()} className={styles.article}/>
             </Tab>
-            <Tab label={'TextField'}>
-                <Article data={textfield()}/>
+            <Tab label={'TextField'} className={styles.baseTab}>
+                <Article data={textfield()} className={styles.article}/>
             </Tab>
-            <Tab label={'DateField'}>
-                <Article data={datefield()}/>
+            <Tab label={'DateField'} className={styles.baseTab}>
+                <Article data={datefield()} className={styles.article}/>
             </Tab>
-            <Tab label={'Multiselect'}>
-                <Article data={multiselect()}/>
+            <Tab label={'Multiselect'} className={styles.baseTab}>
+                <Article data={multiselect()} className={styles.article}/>
             </Tab>
-            <Tab label={'DropDown'}>
-                <Article data={dropdown()}/>
+            <Tab label={'DropDown'} className={styles.baseTab}>
+                <Article data={dropdown()} className={styles.article}/>
             </Tab>
-            <Tab label={'FileField'}>
-                <Article data={filefield()}/>
+            <Tab label={'FileField'} className={styles.baseTab}>
+                <Article data={filefield()} className={styles.article}/>
             </Tab>
-            <Tab label={'Form'}>
-                <Article data={form()}/>
+            <Tab label={'Form'} className={styles.baseTab}>
+                <Article data={form()} className={styles.article}/>
             </Tab>
-            <Tab label={'Selector'}>
-                <Article data={selector()}/>
+            <Tab label={'Selector'} className={styles.baseTab}>
+                <Article data={selector()} className={styles.article}/>
             </Tab>
         </Tabs>
     )
