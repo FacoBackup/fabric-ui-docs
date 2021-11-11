@@ -50,9 +50,9 @@ export default function datefield() {
         </>
     )
     const basicProps = (
-        <React.Fragment>
+        <>
             <DateField label={'Label prop'} disabled={true} width={'30%'} size={'default'} value={'01/01/2000'}  handleChange={() => null}/>
-        </React.Fragment>
+        </>
     )
     return [
         {
