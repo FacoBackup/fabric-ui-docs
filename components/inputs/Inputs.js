@@ -13,10 +13,11 @@ import checkbox from "./checkbox";
 import styles from '../../styles/Home.module.css'
 import Tabs from "../core/navigation/tabs/Tabs";
 import Tab from "../core/navigation/tabs/Tab";
+import {VerticalTabs} from "mfc-core";
 
 export default function Inputs() {
     return (
-        <Tabs className={styles.tabs} align={'start'}>
+        <VerticalTabs className={styles.verticalTabs} align={'start'}>
             <Tab label={'Button'} className={styles.baseTab}>
                 <Article data={button()} className={styles.article}/>
             </Tab>
@@ -45,6 +46,6 @@ export default function Inputs() {
             <Tab label={'Selector'} className={styles.baseTab}>
                 <Article data={selector()} className={styles.article}/>
             </Tab>
-        </Tabs>
+        </VerticalTabs>
     )
 }
