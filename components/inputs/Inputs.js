@@ -11,11 +11,12 @@ import datefield from "./datefield";
 import textfield from "./textfield";
 import checkbox from "./checkbox";
 import styles from '../../styles/Home.module.css'
-import {Tab, Tabs} from "mfc-core";
+import Tabs from "../core/navigation/tabs/Tabs";
+import Tab from "../core/navigation/tabs/Tab";
 
 export default function Inputs() {
     return (
-        <Tabs className={styles.tabs}>
+        <Tabs className={styles.tabs} align={'start'}>
             <Tab label={'Button'} className={styles.baseTab}>
                 <Article data={button()} className={styles.article}/>
             </Tab>
