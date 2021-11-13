@@ -1,4 +1,5 @@
 import {Button} from "mfc-core";
+import CodeBlock from "../core/visualization/code_block/CodeBlock";
 
 export default function button() {
     const variants = (
@@ -49,17 +50,16 @@ export default function button() {
         ],
         body: [
             {
-                content: (
-                    <div style={{display: 'flex', gap: '4px', justifyContent: 'center'}}>
-                        {variants}
-                    </div>
-                ),
+                content: variants,
                 type: 'native-code'
             },
             {
-                content: variants,
-                type: 'code',
-                float: 'stretch'
+                content: (
+                    <CodeBlock language={'jsx'} width={'100%'}>
+                        {variants}
+                    </CodeBlock>
+                ),
+                type: 'native-code'
             }
         ]
     },
@@ -76,17 +76,16 @@ export default function button() {
             ],
             body: [
                 {
-                    content: (
-                        <div style={{display: 'flex', gap: '4px', justifyContent: 'center'}}>
-                            {states('default')}
-                        </div>
-                    ),
+                    content: states('default'),
                     type: 'native-code'
                 },
                 {
-                    content: states('default'),
-                    type: 'code',
-                    float: 'stretch'
+                    content: (
+                        <CodeBlock language={'jsx'} width={'100%'}>
+                            {states('default')}
+                        </CodeBlock>
+                    ),
+                    type: 'native-code'
                 }
             ]
         },
@@ -103,17 +102,16 @@ export default function button() {
             ],
             body: [
                 {
-                    content: (
-                        <div style={{display: 'flex', gap: '4px', justifyContent: 'center'}}>
-                            {states('outlined')}
-                        </div>
-                    ),
+                    content:states('outlined'),
                     type: 'native-code'
                 },
                 {
-                    content: states('outlined'),
-                    type: 'code',
-                    float: 'stretch'
+                    content: (
+                        <CodeBlock language={'jsx'} width={'100%'}>
+                            {states('outlined')}
+                        </CodeBlock>
+                    ),
+                    type: 'native-code'
                 }
             ]
         },
@@ -130,17 +128,16 @@ export default function button() {
             ],
             body: [
                 {
-                    content: (
-                        <div style={{display: 'flex', gap: '4px', justifyContent: 'center'}}>
-                            {states('filled')}
-                        </div>
-                    ),
+                    content: states('filled'),
                     type: 'native-code'
                 },
                 {
-                    content: states('filled'),
-                    type: 'code',
-                    float: 'stretch'
+                    content: (
+                        <CodeBlock language={'jsx'} width={'100%'}>
+                            {states('filled')}
+                        </CodeBlock>
+                    ),
+                    type: 'native-code'
                 }
             ]
         },
@@ -157,32 +154,44 @@ export default function button() {
             ],
             body: [
                 {
-                    content: (
-                        <div style={{display: 'flex', gap: '4px', justifyContent: 'center'}}>
-                            {states('minimal')}
-                        </div>
-                    ),
-                    type: 'native-code'
-                },
-                {
                     content: states('minimal'),
-                    type: 'code',
-                    float: 'stretch'
-                },
-                {
-                    content: (
-                        <div style={{display: 'flex', gap: '4px', justifyContent: 'center'}}>
-                            {states('minimal-horizontal')}
-                        </div>
-                    ),
                     type: 'native-code'
                 },
                 {
-                    content: states('minimal-horizontal'),
-                    type: 'code',
-                    float: 'stretch'
+                    content: (
+                        <CodeBlock language={'jsx'} width={'100%'}>
+                            {states('minimal')}
+                        </CodeBlock>
+                    ),
+                    type: 'native-code'
                 }
             ]
-        }
+        },
+        {
+            headers: [
+                {
+                    content: 'Horizontal minimal button',
+                    type: 'primary'
+                },
+                {
+                    content: 'Clean, medium visual information when interacted. Perfect for side-bars',
+                    type: 'tertiary'
+                }
+            ],
+            body: [
+                {
+                    content: states('minimal-horizontal'),
+                    type: 'native-code'
+                },
+                {
+                    content: (
+                        <CodeBlock language={'jsx'} width={'100%'}>
+                            {states('minimal-horizontal')}
+                        </CodeBlock>
+                    ),
+                    type: 'native-code'
+                }
+            ]
+        },
     ]
 }

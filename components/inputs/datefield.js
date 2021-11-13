@@ -1,6 +1,6 @@
-
 import React, {useState} from "react";
 import {DateField} from "mfc-core";
+import CodeBlock from "../core/visualization/code_block/CodeBlock";
 
 export default function datefield() {
     const [date, setDate] = useState(undefined)
@@ -9,7 +9,8 @@ export default function datefield() {
             <DateField handleChange={(event) => setDate(event)} value={date} label={'Default'} width={'30%'}/>
             <DateField handleChange={(event) => setDate(event)} value={date} label={'Required'} required={true}
                        width={'30%'}/>
-            <DateField handleChange={(event) => setDate(event)} value={date} label={'Disabled'} width={'30%'} disabled={true}/>
+            <DateField handleChange={(event) => setDate(event)} value={date} label={'Disabled'} width={'30%'}
+                       disabled={true}/>
         </>
     )
     const variants = (
@@ -52,7 +53,8 @@ export default function datefield() {
     )
     const basicProps = (
         <>
-            <DateField label={'Label prop'} disabled={true} width={'30%'} size={'default'} value={'01/01/2000'}  handleChange={() => null}/>
+            <DateField label={'Label prop'} disabled={true} width={'30%'} size={'default'} value={'01/01/2000'}
+                       handleChange={() => null}/>
         </>
     )
     return [
@@ -74,18 +76,17 @@ export default function datefield() {
                     type: 'text'
                 },
                 {
-                    content: (
-                        <div style={{display: 'flex', flexFlow: 'row wrap', columnGap: '16px', rowGap: '4px'}}>
-                            {example}
-                        </div>
-                    ),
+                    content: example,
                     type: 'native-code',
                 },
                 {content: `<b>Note:</b> The default variant is the not required one.`, type: 'text'},
                 {
-                    content: example,
-                    type: 'code',
-                    float: 'stretch'
+                    content: (
+                        <CodeBlock language={'jsx'} width={'100%'}>
+                            {example}
+                        </CodeBlock>
+                    ),
+                    type: 'native-code'
                 }
             ]
         },
@@ -106,11 +107,7 @@ export default function datefield() {
                     type: 'text'
                 },
                 {
-                    content: (
-                        <div style={{display: 'flex', flexFlow: 'row wrap', columnGap: '16px', rowGap: '4px'}}>
-                            {basicProps}
-                        </div>
-                    ),
+                    content: basicProps,
                     type: 'native-code',
                 },
                 {
@@ -118,9 +115,14 @@ export default function datefield() {
                     type: 'text'
                 },
                 {
-                    content: basicProps,
-                    type: 'code',
-                    float: 'stretch'
+
+                    content: (
+                        <CodeBlock language={'jsx'} width={'100%'}>
+                            {basicProps}
+                        </CodeBlock>
+                    ),
+                    type: 'native-code'
+
                 }
             ]
         },
@@ -137,11 +139,7 @@ export default function datefield() {
                     type: 'text'
                 },
                 {
-                    content: (
-                        <div style={{display: 'flex', flexFlow: 'row wrap', columnGap: '16px', rowGap: '4px'}}>
-                            {variants}
-                        </div>
-                    ),
+                    content: variants,
                     type: 'native-code',
                 },
                 {
@@ -149,9 +147,14 @@ export default function datefield() {
                     type: 'text'
                 },
                 {
-                    content: variants,
-                    type: 'code',
-                    float: 'stretch'
+
+                    content: (
+                        <CodeBlock language={'jsx'} width={'100%'}>
+                            {variants}
+                        </CodeBlock>
+                    ),
+                    type: 'native-code'
+
                 }
             ]
         },
@@ -178,11 +181,7 @@ export default function datefield() {
                     type: 'text'
                 },
                 {
-                    content: (
-                        <div style={{display: 'flex', flexFlow: 'row wrap', columnGap: '16px', rowGap: '4px'}}>
-                            {sizeVariants}
-                        </div>
-                    ),
+                    content: sizeVariants,
                     type: 'native-code',
                 },
                 {
@@ -190,9 +189,14 @@ export default function datefield() {
                     type: 'text'
                 },
                 {
-                    content: sizeVariants,
-                    type: 'code',
-                    float: 'stretch'
+
+                    content: (
+                        <CodeBlock language={'jsx'} width={'100%'}>
+                            {sizeVariants}
+                        </CodeBlock>
+                    ),
+                    type: 'native-code'
+
                 }
             ]
         }
