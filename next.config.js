@@ -6,4 +6,5 @@ module.exports = {
         locales: ['en', 'pt'],
         defaultLocale: 'pt'
     },
+    generateEtags: false
 }
