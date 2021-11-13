@@ -1,10 +1,8 @@
-import PropTypes from "prop-types";
-
 export default function installation() {
     return [{
         headers: [
             {
-                content: 'npm installation',
+                content: 'NPM installation',
                 type: 'primary'
             },
             {
@@ -20,10 +18,10 @@ export default function installation() {
             {
                 content: '' +
                     '// with npm\n' +
-                    'npm install @material-ui/core @material-ui/icons axios react-input-mask\n' +
+                    'npm install axios react-input-mask prop-types\n' +
                     '\n' +
                     '// with yarn\n' +
-                    'yarn add @material-ui/core @material-ui/icons axios react-input-mask',
+                    'yarn add axios react-input-mask prop-types',
 
                 type: 'pre-formatted',
                 float: 'stretch'
@@ -43,7 +41,36 @@ export default function installation() {
                 type: 'pre-formatted',
                 float: 'stretch'
             },
-        ],
-        alert: '<b>Warning</b>: this is not a production ready package, it is still in deep development and many things may change overtime.',
-    }]
+        ]
+    },
+        {
+            headers: [
+                {
+                    content: 'Basic usage',
+                    type: 'primary'
+                }
+            ],
+            body: [
+                {
+                    content:
+                        `
+import React from 'react'; 
+import ReactDOM from 'react-dom';
+import {Button} from 'mfc-core';
+
+function App() {
+  return (
+    <Button variant="filled" color="primary">
+      Hello World
+    </Button>
+  );
+}
+
+ReactDOM.render(<App />, document.querySelector('#app'));`,
+                type: 'pre-formatted',
+                    float: 'stretch'
+                }
+            ]
+        }
+    ]
 }

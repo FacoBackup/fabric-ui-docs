@@ -1,16 +1,11 @@
 import '../styles/globals.css'
 import styles from '../styles/Home.module.css'
 import {useEffect, useState} from "react";
-import Router, {useRouter} from 'next/router';
-import ThemeProvider from "../components/core/misc/theme/ThemeProvider";
+import {useRouter} from 'next/router';
 import "@fontsource/roboto";
-import Bar from "../components/core/navigation/bar/Bar";
-import BarAction from "../components/core/navigation/bar/BarAction";
-import Loader from "../components/core/navigation/loader/Loader";
-import Button from "../components/core/inputs/button/Button";
-import {ToolTip} from "mfc-core";
+
+import {Bar, BarAction, Button, ThemeProvider, ToolTip, ToolTipButton} from "mfc-core";
 import Cookies from "universal-cookie/lib";
-import ActionButton from "../components/core/inputs/button/ActionButton";
 
 const cookies = new Cookies()
 
@@ -39,7 +34,7 @@ function Mfc({Component, pageProps}) {
 
     return (
         <ThemeProvider onDark={dark} className={styles.wrapper}>
-            <Loader loading={loading}/>
+            {/*<Loader loading={loading}/>*/}
             <div className={styles.bars}>
                 <Bar orientation={"horizontal"}>
                     <BarAction className={styles.appName}>

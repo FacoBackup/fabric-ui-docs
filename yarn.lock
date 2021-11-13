@@ -2134,10 +2134,10 @@ merge2@^1.3.0:
   resolved "https://registry.yarnpkg.com/merge2/-/merge2-1.4.1.tgz#4368892f885e907455a6fd7dc55c0c9d404990ae"
   integrity sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==
 
-mfc-core@latest:
-  version "0.9.8"
-  resolved "https://registry.yarnpkg.com/mfc-core/-/mfc-core-0.9.8.tgz#e13bd1565e233a1edb0336e3813db11c47ff5f4b"
-  integrity sha512-RYS058bkPe6D1iTm2nfVtfrUNRfUMCDiV+CpAm4vqInpdVJ7huKx26jv5HjFqj3/ghoCm2PA1nfooCtxlmHuKA==
+mfc-core@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/mfc-core/-/mfc-core-1.0.2.tgz#512923e540b10e760e1a5c8035315e825f919bb1"
+  integrity sha512-UCnFmjAxUti4bW3mi+h7QVYYvZbOkvnYTXu7QjAzH61hc7nR2YFvR1FrMEtRrzipQob+hz4Ge6IBGlj7kJid4A==
 
 micromatch@^4.0.4:
   version "4.0.4"

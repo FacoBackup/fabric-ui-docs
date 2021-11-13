@@ -1,5 +1,6 @@
-import DateField from "../core/inputs/date/DateField";
+
 import React, {useState} from "react";
+import {DateField} from "mfc-core";
 
 export default function datefield() {
     const [date, setDate] = useState(undefined)
