@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Button, ThemeProvider} from 'mfc-core';
+import useFile from "../../components/core/misc/useFile";
+import CodeBlock from "../../components/core/visualization/code_block/CodeBlock";
 
 function App() {
+    const exampleJSFile= useFile('./example.js')
     return (
         ///JSX
         <ThemeProvider>
-            <Button variant="filled" color="primary">
-                Hello World
-            </Button>
+            <CodeBlock width={'100%'} data={exampleJSFile} language={'javascript'}/>
         </ThemeProvider>
         ///JSX
     );

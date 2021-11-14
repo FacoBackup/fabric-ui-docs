@@ -1,4 +1,8 @@
+import useFile from "../core/misc/useFile";
+import CodeBlock from "../core/visualization/code_block/CodeBlock";
+
 export default function installation() {
+    const ex = useFile('./example.js')
     return [{
         headers: [
             {
@@ -52,23 +56,8 @@ export default function installation() {
             ],
             body: [
                 {
-                    content:
-                        `
-import React from 'react'; 
-import ReactDOM from 'react-dom';
-import {Button} from 'mfc-core';
-
-function App() {
-  return (
-    <Button variant="filled" color="primary">
-      Hello World
-    </Button>
-  );
-}
-
-ReactDOM.render(<App />, document.querySelector('#app'));`,
-                type: 'pre-formatted',
-                    float: 'stretch'
+                    content: <CodeBlock language={'javascript'} data={ex} width={'100%'}/>,
+                    type: 'native-code',
                 }
             ]
         }

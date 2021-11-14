@@ -1,9 +1,14 @@
 import React, {useState} from "react";
 import {DateField} from "mfc-core";
 import CodeBlock from "../core/visualization/code_block/CodeBlock";
+import useFile from "../core/misc/useFile";
 
 export default function datefield() {
     const [date, setDate] = useState(undefined)
+    const sizesEx= useFile('./date/dateFieldSizes.js')
+    const variantsEx= useFile('./date/dateFieldVariants.js')
+    const ex= useFile('./date/dateFieldUsage.js')
+    const propsEx = useFile('./date/dateFieldProps.js')
     const example = (
         <>
             <DateField handleChange={(event) => setDate(event)} value={date} label={'Default'} width={'30%'}/>
@@ -82,9 +87,7 @@ export default function datefield() {
                 {content: `<b>Note:</b> The default variant is the not required one.`, type: 'text'},
                 {
                     content: (
-                        <CodeBlock language={'jsx'} width={'100%'}>
-                            {example}
-                        </CodeBlock>
+                        <CodeBlock language={'javascript'} width={'100%'} data={ex}/>
                     ),
                     type: 'native-code'
                 }
@@ -117,9 +120,7 @@ export default function datefield() {
                 {
 
                     content: (
-                        <CodeBlock language={'jsx'} width={'100%'}>
-                            {basicProps}
-                        </CodeBlock>
+                        <CodeBlock language={'javascript'} width={'100%'} data={propsEx}/>
                     ),
                     type: 'native-code'
 
@@ -149,9 +150,7 @@ export default function datefield() {
                 {
 
                     content: (
-                        <CodeBlock language={'jsx'} width={'100%'}>
-                            {variants}
-                        </CodeBlock>
+                        <CodeBlock language={'javascript'} width={'100%'} data={variantsEx}/>
                     ),
                     type: 'native-code'
 
@@ -191,9 +190,7 @@ export default function datefield() {
                 {
 
                     content: (
-                        <CodeBlock language={'jsx'} width={'100%'}>
-                            {sizeVariants}
-                        </CodeBlock>
+                        <CodeBlock language={'javascript'} width={'100%'} data={sizesEx}/>
                     ),
                     type: 'native-code'
 

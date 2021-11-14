@@ -1,7 +1,10 @@
 import CodeBlock from "../core/visualization/code_block/CodeBlock";
 import {Button} from "mfc-core";
-import json from '../../public/example.json'
+
+import useFile from "../core/misc/useFile";
 export default function codeblock() {
+    const example = useFile('./codeblock/codeBlockUsage.js', false)
+    const exampleJson = useFile('./example.json', true)
     const variants = (
         <>
             <Button>
@@ -28,17 +31,13 @@ export default function codeblock() {
                 },
                 {
                     content: (
-                        <CodeBlock language={'jsx'} width={'100%'}>
-                            <CodeBlock language={'jsx'} width={'100%'}>
-                                {variants}
-                            </CodeBlock>
-                        </CodeBlock>
+                        <CodeBlock language={'javascript'} data={example} width={'100%'}/>
                     ),
                     type: 'native-code'
                 },
                 {
                     content: (
-                        <CodeBlock language={'json'} json={json} width={'100%'}/>
+                        <CodeBlock language={'json'} data={exampleJson} width={'100%'}/>
                     ),
                     type: 'native-code'
                 },
