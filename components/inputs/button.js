@@ -1,7 +1,15 @@
 import {Button} from "mfc-core";
 import CodeBlock from "../core/visualization/code_block/CodeBlock";
+import useFile from "../core/misc/useFile";
 
 export default function button() {
+    const minimal = useFile('./button/minimal.js')
+    const defaultEx = useFile('./button/default.js')
+    const filled = useFile('./button/filled.js')
+    const minimalHorizontal = useFile('./button/minimalHorizontal.js')
+    const outlined = useFile('./button/outlined.js')
+    const all = useFile('./button/all.js')
+
     const variants = (
         <>
             <Button variant={'default'}>
@@ -55,9 +63,7 @@ export default function button() {
             },
             {
                 content: (
-                    <CodeBlock language={'jsx'} width={'100%'}>
-                        {variants}
-                    </CodeBlock>
+                    <CodeBlock language={'javascript'} width={'100%'} data={all}/>
                 ),
                 type: 'native-code'
             }
@@ -81,9 +87,7 @@ export default function button() {
                 },
                 {
                     content: (
-                        <CodeBlock language={'jsx'} width={'100%'}>
-                            {states('default')}
-                        </CodeBlock>
+                        <CodeBlock language={'javascript'} width={'100%'} data={defaultEx}/>
                     ),
                     type: 'native-code'
                 }
@@ -102,14 +106,12 @@ export default function button() {
             ],
             body: [
                 {
-                    content:states('outlined'),
+                    content: states('outlined'),
                     type: 'native-code'
                 },
                 {
                     content: (
-                        <CodeBlock language={'jsx'} width={'100%'}>
-                            {states('outlined')}
-                        </CodeBlock>
+                        <CodeBlock language={'javascript'} width={'100%'} data={outlined}/>
                     ),
                     type: 'native-code'
                 }
@@ -133,9 +135,7 @@ export default function button() {
                 },
                 {
                     content: (
-                        <CodeBlock language={'jsx'} width={'100%'}>
-                            {states('filled')}
-                        </CodeBlock>
+                        <CodeBlock language={'javascript'} width={'100%'} data={filled}/>
                     ),
                     type: 'native-code'
                 }
@@ -159,9 +159,7 @@ export default function button() {
                 },
                 {
                     content: (
-                        <CodeBlock language={'jsx'} width={'100%'}>
-                            {states('minimal')}
-                        </CodeBlock>
+                        <CodeBlock language={'javascript'} width={'100%'} data={minimal}/>
                     ),
                     type: 'native-code'
                 }
@@ -185,9 +183,7 @@ export default function button() {
                 },
                 {
                     content: (
-                        <CodeBlock language={'jsx'} width={'100%'}>
-                            {states('minimal-horizontal')}
-                        </CodeBlock>
+                        <CodeBlock language={'javascript'} width={'100%'} data={minimalHorizontal}/>
                     ),
                     type: 'native-code'
                 }

@@ -6,7 +6,7 @@ export default function filefield() {
                 type: 'primary'
             },
             {
-                content: 'Follow the instructions bellow for a easy way to install the package on your current React project.',
+                content: 'Follow the instructions below for a easy way to install the package on your current React project.',
                 type: 'tertiary'
             }
         ],

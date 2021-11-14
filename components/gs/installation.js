@@ -10,7 +10,7 @@ export default function installation() {
                 type: 'primary'
             },
             {
-                content: 'Follow the instructions bellow for a easy way to install the package on your current React project.',
+                content: 'Follow the instructions below for a easy way to install the package on your current React project.',
                 type: 'tertiary'
             }
         ],
@@ -56,6 +56,21 @@ export default function installation() {
             ],
             body: [
                 {
+                    content: 'To setup any component from the <b>mfc-core</b> package it\'s recomended that you wrap everything inside the <b>ThemeProvider</b> component, this will insure that your whole app have the same color pallet applied.',
+                    type: 'text'
+                },
+                {
+                    content: 'As you can see from the example below, it is pretty easy to get started',
+                    type: 'text'
+                },
+                // {
+                //     content: 'See more about the <b>ThemeProvider</b> component <a>here</a>.',
+                //
+                //     type: 'text'
+                // },
+
+                {
+
                     content: <CodeBlock language={'javascript'} data={ex} width={'100%'}/>,
                     type: 'native-code',
                 }

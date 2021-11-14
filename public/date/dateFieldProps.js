@@ -1,20 +1,23 @@
 import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
-import {DateField} from 'mfc-core';
+import {DateField, ThemeProvider} from 'mfc-core';
+
 
 function App() {
     const [date, setDate] = useState()
 
     return (
         ///JSX
-        <DateField
-            label={'Label prop'}
-            disabled={true}
-            width={'30%'}
-            size={'default'}
-            value={date}
-            handleChange={(event) => setDate(event)}
-        />
+        <ThemeProvider>
+            <DateField
+                label={'Label prop'}
+                disabled={true}
+                width={'30%'}
+                size={'default'}
+                value={date}
+                handleChange={(event) => setDate(event)}
+            />
+        </ThemeProvider>
         ///JSX
     );
 
