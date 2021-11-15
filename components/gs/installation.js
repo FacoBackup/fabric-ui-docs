@@ -2,7 +2,7 @@ import useFile from "../core/misc/useFile";
 import CodeBlock from "../core/visualization/code_block/CodeBlock";
 
 export default function installation() {
-    const ex = useFile('./example.js')
+    const ex = useFile('./gs/example.js')
     return [{
         headers: [
             {
