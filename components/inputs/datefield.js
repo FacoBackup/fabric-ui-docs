@@ -89,7 +89,7 @@ export default function datefield() {
                     content: (
                         <CodeBlock language={'javascript'} width={'100%'} data={ex}/>
                     ),
-                    type: 'native-code'
+                    type: 'any'
                 }
             ]
         },
@@ -122,7 +122,7 @@ export default function datefield() {
                     content: (
                         <CodeBlock language={'javascript'} width={'100%'} data={propsEx}/>
                     ),
-                    type: 'native-code'
+                    type: 'any'
 
                 }
             ]
@@ -152,7 +152,7 @@ export default function datefield() {
                     content: (
                         <CodeBlock language={'javascript'} width={'100%'} data={variantsEx}/>
                     ),
-                    type: 'native-code'
+                    type: 'any'
 
                 }
             ]
@@ -192,7 +192,7 @@ export default function datefield() {
                     content: (
                         <CodeBlock language={'javascript'} width={'100%'} data={sizesEx}/>
                     ),
-                    type: 'native-code'
+                    type: 'any'
 
                 }
             ]

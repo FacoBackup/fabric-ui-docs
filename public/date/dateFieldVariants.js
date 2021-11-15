@@ -71,7 +71,7 @@ function App() {
                 pattern={'mm/dd/yyyy'}
                 width={'30%'}/>
         </ThemeProvider>
-        ///JSX
+        ///JSX-END
     );
 }
 

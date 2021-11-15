@@ -65,7 +65,7 @@ export default function button() {
                 content: (
                     <CodeBlock language={'javascript'} width={'100%'} data={all}/>
                 ),
-                type: 'native-code'
+                type: 'any'
             }
         ]
     },
@@ -89,7 +89,7 @@ export default function button() {
                     content: (
                         <CodeBlock language={'javascript'} width={'100%'} data={defaultEx}/>
                     ),
-                    type: 'native-code'
+                    type: 'any'
                 }
             ]
         },
@@ -113,7 +113,7 @@ export default function button() {
                     content: (
                         <CodeBlock language={'javascript'} width={'100%'} data={outlined}/>
                     ),
-                    type: 'native-code'
+                    type: 'any'
                 }
             ]
         },
@@ -137,7 +137,7 @@ export default function button() {
                     content: (
                         <CodeBlock language={'javascript'} width={'100%'} data={filled}/>
                     ),
-                    type: 'native-code'
+                    type: 'any'
                 }
             ]
         },
@@ -161,7 +161,7 @@ export default function button() {
                     content: (
                         <CodeBlock language={'javascript'} width={'100%'} data={minimal}/>
                     ),
-                    type: 'native-code'
+                    type: 'any'
                 }
             ]
         },
@@ -185,7 +185,7 @@ export default function button() {
                     content: (
                         <CodeBlock language={'javascript'} width={'100%'} data={minimalHorizontal}/>
                     ),
-                    type: 'native-code'
+                    type: 'any'
                 }
             ]
         },

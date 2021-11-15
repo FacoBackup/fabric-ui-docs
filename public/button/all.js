@@ -22,7 +22,7 @@ function App() {
                 Minimal horizontal
             </Button>
         </ThemeProvider>
-        ///JSX
+        ///JSX-END
     );
 }
 

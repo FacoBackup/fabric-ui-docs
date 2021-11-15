@@ -11,7 +11,7 @@ function App() {
         <ThemeProvider>
             <CodeBlock width={'100%'} data={exampleJSFile} language={'javascript'}/>
         </ThemeProvider>
-        ///JSX
+        ///JSX-END
     );
 }
 

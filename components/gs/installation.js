@@ -72,7 +72,7 @@ export default function installation() {
                 {
 
                     content: <CodeBlock language={'javascript'} data={ex} width={'100%'}/>,
-                    type: 'native-code',
+                    type: 'any'
                 }
             ]
         }

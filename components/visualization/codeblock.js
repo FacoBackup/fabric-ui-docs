@@ -28,7 +28,7 @@ export default function codeblock() {
                     content: (
                         <CodeBlock language={'javascript'} data={example} width={'100%'}/>
                     ),
-                    type: 'native-code'
+                    type: 'any'
                 },
                 {
                     content: 'Json example:',
@@ -38,7 +38,7 @@ export default function codeblock() {
                     content: (
                         <CodeBlock language={'json'} data={exampleJson} width={'100%'}/>
                     ),
-                    type: 'native-code'
+                    type: 'any'
                 },
             ]
         },
@@ -70,7 +70,33 @@ export default function codeblock() {
                     content: (
                         <CodeBlock language={'javascript'} data={example} width={'100%'}/>
                     ),
-                    type: 'native-code'
+                    type: 'any'
+                }
+            ]
+        },
+        {
+            headers: [
+                {
+                    content: 'JSX inside a Javascript code',
+                    type: 'primary'
+                }
+            ],
+            body: [
+                {
+                    content: 'In order for the highlight to work you will need to wrap your JSX code inside the following markers:',
+                    type: 'text'
+                },
+                {
+                    content: '&nbsp;&nbsp;<b>///JSX</b>: Start of the JSX code.',
+                    type: 'text'
+                },
+                {
+                    content: '&nbsp;&nbsp;<b>///JSX-END</b>: End of the JSX code.',
+                    type: 'text'
+                },
+                {
+                    content: '<b>Note</b>: if you don\'t provide these markers the jsx code will be interpreted as normal javascript (no syntax highlight)',
+                    type: 'text'
                 }
             ]
         },

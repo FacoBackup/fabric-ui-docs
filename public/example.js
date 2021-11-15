@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Button, ThemeProvider} from 'mfc-core';
 
-function App() {
+function App(props) {
     return (
         ///JSX
         <ThemeProvider>
@@ -10,7 +10,7 @@ function App() {
                 Hello World
             </Button>
         </ThemeProvider>
-        ///JSX
+        ///JSX-END
     );
 }
 
