@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {DateField} from "mfc-core";
-import CodeBlock from "../core/visualization/code_block/CodeBlock";
-import useFile from "../core/misc/useFile";
+import CodeBlock from "../../../components/core/visualization/code_block/CodeBlock";
+import useFile from "../../../components/core/misc/useFile";
 
 export default function datefield() {
     const [date, setDate] = useState(undefined)

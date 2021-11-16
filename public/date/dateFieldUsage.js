@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
-import {ThemeProvider, DateField} from 'mfc-core';
+import {DateField, ThemeProvider} from 'mfc-core';
 
 function App() {
     const [date, setDate] = useState()

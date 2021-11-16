@@ -1,7 +1,6 @@
-import CodeBlock from "../core/visualization/code_block/CodeBlock";
-import {Button} from "mfc-core";
+import CodeBlock from "../../../components/core/visualization/code_block/CodeBlock";
 
-import useFile from "../core/misc/useFile";
+import useFile from "../../../components/core/misc/useFile";
 
 export default function codeblock() {
     const example = useFile('./codeblock/codeBlockUsage.js', false)

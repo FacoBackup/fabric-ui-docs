@@ -23,13 +23,17 @@
 }
 
 .appName {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    gap: 4px;
     color: var(--mfc-color-secondary);
     font-size: .9rem;
     font-weight: bold;
 }
 
 .bars {
-    /*flex-grow: 1;*/
+
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -57,10 +61,10 @@
 }
 
 .button {
-    width: 100%;
-    height: fit-content;
-    display: flex;
-    align-content: center;
+    width: clamp(57px, calc(3vw - 8px), 92px);
+    height: clamp(57px, calc(3vw - 8px), 92px);
+    display: grid;
+    gap: 4px;
     justify-content: center;
 }
 
@@ -93,7 +97,7 @@
 }
 
 .baseTab {
-    padding: 0 10%;
+    padding: 0 0 0 10%;
     display: flex;
     flex-direction: column;
     /*margin-top: 16px;*/
@@ -106,14 +110,4 @@
     height: 100%;
     display: grid;
     align-content: flex-start;
-}
-
-.button {
-    padding: 8px;
-    width: 30px;
-    height: 30px;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }

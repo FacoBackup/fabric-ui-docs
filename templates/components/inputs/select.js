@@ -1,4 +1,4 @@
-export default function dropdown() {
+export default function select() {
     return [{
         headers: [
             {

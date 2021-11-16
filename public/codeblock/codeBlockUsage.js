@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Button, ThemeProvider} from 'mfc-core';
+import {ThemeProvider} from 'mfc-core';
 import useFile from "../../components/core/misc/useFile";
 import CodeBlock from "../../components/core/visualization/code_block/CodeBlock";
 

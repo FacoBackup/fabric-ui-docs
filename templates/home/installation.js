@@ -1,9 +1,9 @@
-import useFile from "../core/misc/useFile";
-import CodeBlock from "../core/visualization/code_block/CodeBlock";
+import useFile from "../../components/core/misc/useFile";
+import CodeBlock from "../../components/core/visualization/code_block/CodeBlock";
 
 export default function installation() {
     const ex = useFile('./gs/example.js')
-    const exampleJson = useFile('./example.json', true)
+
     return [{
         headers: [
             {
@@ -64,21 +64,8 @@ export default function installation() {
                     content: 'As you can see from the example below, it is pretty easy to get started',
                     type: 'text'
                 },
-                // {
-                //     content: 'See more about the <b>ThemeProvider</b> component <a>here</a>.',
-                //
-                //     type: 'text'
-                // },
-
                 {
-
                     content: <CodeBlock language={'javascript'} data={ex} width={'100%'}/>,
-                    type: 'any'
-                },
-
-                {
-
-                    content: <CodeBlock language={'json'} data={exampleJson} width={'100%'}/>,
                     type: 'any'
                 }
             ]

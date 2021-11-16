@@ -4,8 +4,11 @@ import {useEffect, useState} from "react";
 import {useRouter} from 'next/router';
 import "@fontsource/roboto";
 
-import {Bar, BarAction, Button, ThemeProvider, ToolTip, ToolTipButton} from "mfc-core";
+import {Button, ThemeProvider, ToolTip} from "mfc-core";
 import Cookies from "universal-cookie/lib";
+import RailActionButton from "../components/core/navigation/rail/RailActionButton";
+import NavigationRail from "../components/core/navigation/rail/NavigationRail";
+import RailActionWrapper from "../components/core/navigation/rail/RailActionWrapper";
 
 const cookies = new Cookies()
 
@@ -37,66 +40,43 @@ function Mfc({Component, pageProps}) {
 
     return (
         <ThemeProvider onDark={dark} className={styles.wrapper}>
-            <div className={styles.bars}>
-                <Bar orientation={"horizontal"}>
-                    <BarAction className={styles.appName}>
-                        mfc components
-                    </BarAction>
-                    <BarAction place={'end'}>
-                        <Button
-                            onClick={() => setTheme(!dark)}
-                            className={styles.button}
-                            variant={'minimal'}>
-                            {dark ?
-                                <span className="material-icons-round">brightness_3</span>
-                                :
-                                <span className="material-icons-round">brightness_high</span>}
-                            <ToolTip content={'Theme'}/>
-                        </Button>
-                    </BarAction>
-                </Bar>
-                <div className={styles.contentWrapper}>
-                    {/*<Bar>*/}
-                    {/*    /!*<BarAction>*!/*/}
-                    {/*    <ActionButton*/}
-                    {/*        onClick={() => router.push('/')}*/}
-                    {/*        highlight={router.pathname === '/'}*/}
-                    {/*        label={'Getting Started'}*/}
-                    {/*        icon={(*/}
-                    {/*            <span className="material-icons-round">*/}
-                    {/*                home*/}
-                    {/*            </span>*/}
-                    {/*        )}*/}
-                    {/*    />*/}
-                    {/*    <ActionButton*/}
-                    {/*        onClick={() => router.push('/components')}*/}
-                    {/*        highlight={router.pathname === '/components'}*/}
-                    {/*        label={'Components'}*/}
-                    {/*        icon={(*/}
-                    {/*            <span className="material-icons-round">*/}
-                    {/*                extension*/}
-                    {/*            </span>*/}
-                    {/*        )}*/}
-                    {/*    />*/}
-                    {/*    /!*</BarAction>*!/*/}
-                        {/*<BarAction className={styles.header}>*/}
-                        {/*    mfc components*/}
-                        {/*</BarAction>*/}
-                        {/*<BarAction place={'end'}>*/}
-                        {/*    <Button*/}
-                        {/*        onClick={() => setTheme(!dark)}*/}
-                        {/*        className={styles.button}*/}
-                        {/*        variant={'minimal'}>*/}
-                        {/*        {dark ?*/}
-                        {/*            <span className="material-icons-round">brightness_3</span>*/}
-                        {/*            :*/}
-                        {/*            <span className="material-icons-round">brightness_high</span>}*/}
-                        {/*        <ToolTip content={'Theme'}/>*/}
-                        {/*    </Button>*/}
-                        {/*</BarAction>*/}
-                    {/*</Bar>*/}
-                    <Component {...pageProps} />
-                </div>
+            <div className={styles.contentWrapper}>
+                {router.pathname !== '/' ? (
+                        <NavigationRail>
+                            <RailActionWrapper className={styles.appName} place={"start"}>
+                                <img src='./react-logo.png' alt={'react'} style={{width: '100%'}}/>
+                                MFC
+                                <ToolTip justify={'end'} align={'middle'}
+                                         content={'MFC doesn\'t really mean anything yet'}/>
+                            </RailActionWrapper>
+                            <RailActionButton icon={<span className="material-icons-round">home</span>} label={'Home'}
+                                              highlight={router.pathname === '/home'} onClick={() => router.push('/home')}/>
+                            <RailActionButton icon={<span className="material-icons-round">category</span>}
+                                              label={'Components'} highlight={router.pathname === '/components'}
+                                              onClick={() => router.push('/components')}/>
+                            <RailActionButton icon={<span className="material-icons-round">code</span>} label={'APIs'}
+                                              highlight={router.pathname === '/apis'} onClick={() => router.push('/apis')}
+                                              disabled={true}/>
+                            <RailActionWrapper place={'end'}>
+                                <Button
+                                    onClick={() => setTheme(!dark)}
+                                    className={styles.button}
+                                >
+                                    {dark ?
+                                        <span className="material-icons-round">brightness_3</span>
+                                        :
+                                        <span className="material-icons-round">brightness_high</span>}
+                                    Theme
+
+                                </Button>
+                                <ToolTip justify={'end'} align={'middle'} content={'Theme'}/>
+                            </RailActionWrapper>
+                        </NavigationRail>
+                    )
+                    :
+                    null
+                }
+                <Component {...pageProps} />
             </div>
 
         </ThemeProvider>
