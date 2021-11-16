@@ -14,11 +14,14 @@ function Mfc({Component, pageProps}) {
     const [dark, setDark] = useState(false)
     const setTheme = (value) => {
         setDark(value)
-
-        cookies.set('mfc-theme', value ? 0 : 1)
+        cookies.remove('mfc-theme', {path: '/en'})
+        cookies.set('mfc-theme', value ? 0 : 1, {path: '/en'})
+        cookies.remove('mfc-theme', {path: '/'})
+        cookies.set('mfc-theme', value ? 0 : 1, {path: '/'})
     }
     const router = useRouter()
     useEffect(() => {
+        console.log(cookies.get('mfc-theme'), 'cookie')
         setDark(cookies.get('mfc-theme') === '0')
     }, [])
     useEffect(() => {
@@ -34,7 +37,6 @@ function Mfc({Component, pageProps}) {
 
     return (
         <ThemeProvider onDark={dark} className={styles.wrapper}>
-            {/*<Loader loading={loading}/>*/}
             <div className={styles.bars}>
                 <Bar orientation={"horizontal"}>
                     <BarAction className={styles.appName}>

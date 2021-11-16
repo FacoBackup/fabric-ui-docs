@@ -3,6 +3,7 @@ import CodeBlock from "../core/visualization/code_block/CodeBlock";
 
 export default function installation() {
     const ex = useFile('./gs/example.js')
+    const exampleJson = useFile('./example.json', true)
     return [{
         headers: [
             {
@@ -72,6 +73,12 @@ export default function installation() {
                 {
 
                     content: <CodeBlock language={'javascript'} data={ex} width={'100%'}/>,
+                    type: 'any'
+                },
+
+                {
+
+                    content: <CodeBlock language={'json'} data={exampleJson} width={'100%'}/>,
                     type: 'any'
                 }
             ]

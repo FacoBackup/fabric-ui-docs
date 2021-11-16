@@ -1,22 +1,58 @@
-{
-  "glossary": {
-    "title": "example glossary",
-    "GlossDiv": {
-      "title": "S",
-      "GlossList": {
-        "GlossEntry": {
-          "ID": "SGML",
-          "SortAs": "SGML",
-          "GlossTerm": "Standard Generalized Markup Language",
-          "Acronym": "SGML",
-          "Abbrev": "ISO 8879:1986",
-          "GlossDef": {
-            "para": "A meta-markup language, used to create markup languages such as DocBook.",
-            "GlossSeeAlso": ["GML", "XML"]
-          },
-          "GlossSee": "markup"
-        }
+
+  {
+    "AN-ARRAY-NUMBER": [
+      1,
+      2,
+      3
+    ],
+    "AN-ARRAY-BOOL": [
+      true,
+      false
+    ],
+    "AN-ARRAY-STRING": [
+      "COFFEE",
+      "TEST"
+    ],
+    "AN-ARRAY-OBJECT": [
+      {},
+      {
+        "TEST": 1
+      },
+      {
+        "TEST-2": "1",
+        "AN-NESTED-ARRAY-ARRAY": [
+          [],
+          [
+            {
+              "TEST": 1
+            }
+          ],
+          [
+            [
+              "random array",
+              "COFFEE",
+              "TEST"
+            ],
+            1,
+            2,
+            3
+          ]
+        ]
       }
-    }
+    ],
+    "AN-ARRAY-ARRAY": [
+      [],
+      [
+        {
+          "TEST": {
+            "TEST": []
+          }
+        }
+      ],
+      [
+        1,
+        2,
+        3
+      ]
+    ]
   }
-}
