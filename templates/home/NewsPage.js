@@ -3,7 +3,7 @@ import FeedCard from "../../components/core/visualization/feed/FeedCard";
 import news from "./news";
 import React from 'react'
 
-export default function News() {
+export default function NewsPage() {
     return (
         <Feed title={'Changes & News'}>
             {news.map((e, i) => (
