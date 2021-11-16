@@ -9,8 +9,6 @@
   },
   "dependencies": {
     "@fontsource/roboto": "^4.5.1",
-    "@material-ui/core": "^4.12.3",
-    "@material-ui/icons": "^4.11.2",
     "axios": "^0.24.0",
     "mfc-core": "^1.0.7",
     "next": "12.0.3",
