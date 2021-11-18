@@ -66,7 +66,7 @@ export default function datefield() {
         {
             headers: [
                 {
-                    content: 'Usage',
+                    content: 'DateField basic usage',
                     type: 'primary'
                 },
                 {
@@ -96,7 +96,7 @@ export default function datefield() {
         {
             headers: [
                 {
-                    content: 'Basic props',
+                    content: 'Props',
                     type: 'primary'
                 },
                 {

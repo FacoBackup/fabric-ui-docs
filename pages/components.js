@@ -80,6 +80,13 @@ export default function components() {
             <Tab label={'Article - (coming soon)'} disabled={true} group={'Visualization'} className={styles.baseTab}>
                 <Empty customLabel={'Coming soon'}/>
             </Tab>
+            <Tab label={'Feed - (coming soon)'} disabled={true} group={'Visualization'} className={styles.baseTab}>
+                <Empty customLabel={'Coming soon'}/>
+            </Tab>
+            <Tab label={'FeedCard - (coming soon)'} disabled={true} group={'Visualization'} className={styles.baseTab}>
+                <Empty customLabel={'Coming soon'}/>
+            </Tab>
+
 
             <Tab label={'HorizontalChart - (coming soon)'} disabled={true} group={'Charts'} className={styles.baseTab}>
                 <Empty customLabel={'Coming soon'}/>

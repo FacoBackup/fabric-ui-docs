@@ -47,7 +47,7 @@ export default function button() {
     return [{
         headers: [
             {
-                content: 'Button component usage',
+                content: 'Button basic usage',
                 type: 'primary'
             },
             {
