@@ -1,18 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Button, ThemeProvider} from 'mfc-core';
+import {Button, MfcWrapper} from 'mfc-core';
 
 function App() {
     return (
         ///JSX
-        <ThemeProvider>
+        <MfcWrapper>
             <Button variant="minimal-horizontal" color="primary">
                 Hello World
             </Button>
             <Button variant="minimal-horizontal" color="secondary">
                 Hello World
             </Button>
-        </ThemeProvider>
+        </MfcWrapper>
         ///JSX-END
     );
 }

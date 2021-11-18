@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Button, ThemeProvider} from 'mfc-core';
+import {Button, MfcWrapper} from 'mfc-core';
 
 function App() {
     return (
         ///JSX
-        <ThemeProvider>
+        <MfcWrapper>
             <Button variant={'default'}>
                 Base
             </Button>
@@ -21,7 +21,7 @@ function App() {
             <Button variant={'minimal-horizontal'}>
                 Minimal horizontal
             </Button>
-        </ThemeProvider>
+        </MfcWrapper>
         ///JSX-END
     );
 }

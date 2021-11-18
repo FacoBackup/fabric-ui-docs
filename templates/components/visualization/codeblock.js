@@ -1,7 +1,5 @@
 import CodeBlock from "../../../components/core/visualization/code_block/CodeBlock";
-
-import useFile from "../../../components/core/misc/useFile";
-
+import {useFile} from "mfc-core";
 export default function codeblock() {
     const example = useFile('./codeblock/codeBlockUsage.js', false)
     const exampleJson = useFile('./example.json', true)

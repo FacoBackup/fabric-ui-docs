@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
-import {DateField, ThemeProvider} from 'mfc-core';
+import {DateField, MfcWrapper} from 'mfc-core';
 
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
 
     return (
         ///JSX
-        <ThemeProvider>
+        <MfcWrapper>
             <DateField
                 label={'Label prop'}
                 disabled={true}
@@ -17,7 +17,7 @@ function App() {
                 value={date}
                 handleChange={(event) => setDate(event)}
             />
-        </ThemeProvider>
+        </MfcWrapper>
         ///JSX-END
     );
 

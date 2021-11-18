@@ -1,13 +1,14 @@
 import styles from "../styles/Home.module.css";
 import button from "../templates/components/inputs/button";
 import datefield from "../templates/components/inputs/datefield";
-import {Empty} from "mfc-core";
+// import {Empty} from "mfc-core";
 import CodeBlock from "../components/core/visualization/code_block/CodeBlock";
 import Article from "../components/core/visualization/article/Article";
 import codeblock from "../templates/components/visualization/codeblock";
 import VerticalTabs from "../components/core/navigation/tabs/VerticalTabs";
 import dropdown from "../templates/components/navigation/dropdown";
 import Tab from "../components/core/navigation/tabs/Tab";
+import Empty from "../components/core/feedback/empty/Empty";
 
 export default function components() {
     return (

@@ -1,4 +1,4 @@
-import useFile from "../../components/core/misc/useFile";
+import {useFile} from "mfc-core";
 import CodeBlock from "../../components/core/visualization/code_block/CodeBlock";
 
 export default function installation() {
@@ -57,7 +57,7 @@ export default function installation() {
             ],
             body: [
                 {
-                    content: 'To setup any component from the <b>mfc-core</b> package it\'s recomended that you wrap everything inside the <b>ThemeProvider</b> component, this will insure that your whole app have the same color pallet applied.',
+                    content: 'To setup any component from the <b>mfc-core</b> package it\'s recomended that you wrap everything inside the <b>MfcWrapper</b> component, this will insure that your whole app have the same color pallet applied.',
                     type: 'text'
                 },
                 {

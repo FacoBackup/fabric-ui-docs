@@ -4,7 +4,7 @@ import {useEffect, useState} from "react";
 import {useRouter} from 'next/router';
 import "@fontsource/roboto";
 
-import {Button, ThemeProvider, ToolTip} from "mfc-core";
+import {Button, MfcWrapper, ToolTip} from "mfc-core";
 import Cookies from "universal-cookie/lib";
 import RailActionButton from "../components/core/navigation/rail/RailActionButton";
 import NavigationRail from "../components/core/navigation/rail/NavigationRail";
@@ -39,7 +39,7 @@ function Mfc({Component, pageProps}) {
     })
 
     return (
-        <ThemeProvider onDark={dark} className={styles.wrapper}>
+        <MfcWrapper onDark={dark} className={styles.wrapper}>
             <div className={styles.contentWrapper}>
                 {router.pathname !== '/' ? (
                         <NavigationRail>
@@ -79,7 +79,7 @@ function Mfc({Component, pageProps}) {
                 <Component {...pageProps} />
             </div>
 
-        </ThemeProvider>
+        </MfcWrapper>
     )
 }
 

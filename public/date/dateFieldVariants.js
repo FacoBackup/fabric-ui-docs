@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
-import {DateField, ThemeProvider} from 'mfc-core';
+import {DateField, MfcWrapper} from 'mfc-core';
 
 function App() {
     const [date, setDate] = useState()
 
     return (
         ///JSX
-        <ThemeProvider>
+        <MfcWrapper>
             <DateField
                 handleChange={(event) => setDate(event)}
                 value={date}
@@ -70,7 +70,7 @@ function App() {
                 label={'mm/dd/yyyy'}
                 pattern={'mm/dd/yyyy'}
                 width={'30%'}/>
-        </ThemeProvider>
+        </MfcWrapper>
         ///JSX-END
     );
 }
