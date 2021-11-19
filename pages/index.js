@@ -61,12 +61,12 @@ export default function index() {
                             </Button>
 
                             <Button className={styles.npmLink} variant={'outlined'} onClick={() => {
-                                ref.current.scroll(0, document.body.offsetHeight)
+                                ref.current.childNodes[1].scroll(0, document.body.offsetHeight)
                             }}>
                                 Show me more
                                 <span className={'material-icons-round'}>
-                            expand_more
-                        </span>
+                                    expand_more
+                                </span>
                             </Button>
                         </div>
                     </div>

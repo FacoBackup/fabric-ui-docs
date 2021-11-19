@@ -1,8 +1,17 @@
 import CodeBlock from "../../../components/core/visualization/code_block/CodeBlock";
 import {useFile} from "mfc-core";
+import {useEffect, useState} from "react";
+import axios from "axios";
 export default function codeblock() {
     const example = useFile('./codeblock/codeBlockUsage.js', false)
-    const exampleJson = useFile('./example.json', true)
+    const [exampleJson, setExampleJson] = useState({})
+    useEffect(() => {
+         axios({
+             method: 'get',
+             url: 'https://jsonplaceholder.typicode.com/users'
+         }).then(res => setExampleJson(res.data.splice(1, 2)))
+    }, [])
+
     return [
         {
             headers: [
@@ -37,6 +46,11 @@ export default function codeblock() {
                     ),
                     type: 'any'
                 },
+                {
+                    content: 'JSON data provided by <a href="https://jsonplaceholder.typicode.com/">JSONPlaceholder</a>',
+                    type: 'text'
+                }
+
             ]
         },
         {
