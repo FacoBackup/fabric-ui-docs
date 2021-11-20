@@ -49,8 +49,12 @@ function Mfc({Component, pageProps}) {
                                 <ToolTip justify={'end'} align={'middle'}
                                          content={'MFC doesn\'t really mean anything yet'}/>
                             </RailActionWrapper>
-                            <RailActionButton icon={<span className="material-icons-round">home</span>} label={'Home'}
-                                              highlight={router.pathname === '/home'} onClick={() => router.push('/home')}/>
+                            <RailActionButton
+                                icon={<span className="material-icons-round">home</span>}
+                                label={'Home'}
+                                highlight={router.pathname === '/home'}
+                                onClick={() => router.push('/home')}
+                            />
                             <RailActionButton icon={<span className="material-icons-round">category</span>}
                                               label={'Components'} highlight={router.pathname === '/components'}
                                               onClick={() => router.push('/components')}/>

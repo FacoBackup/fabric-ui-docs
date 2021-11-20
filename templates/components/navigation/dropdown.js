@@ -61,7 +61,7 @@ export default function dropdown(){
     )
     const examples = useFile('./dropdown/example.js')
     const stylesEx = useFile('./dropdown/styles.js')
-    return[
+    return [
         {
             headers: [
                 {

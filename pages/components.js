@@ -9,11 +9,25 @@ import VerticalTabs from "../components/core/navigation/tabs/VerticalTabs";
 import dropdown from "../templates/components/navigation/dropdown";
 import Tab from "../components/core/navigation/tabs/Tab";
 import Empty from "../components/core/feedback/empty/Empty";
+import rail from "../templates/components/navigation/rail";
+import {useEffect, useState} from "react";
+import {useRouter} from "next/router";
 
 export default function components() {
-    return (
-        <VerticalTabs align={'start'} className={styles.verticalTabs}>
+    const [tab, setTab] = useState(0)
+    const router = useRouter()
 
+    useEffect(() => {
+        const t = router.query.tab
+        setTab(t !== undefined && !isNaN(parseInt(t)) ? parseInt(t) : 0)
+    }, [router.query])
+
+    return (
+        <VerticalTabs align={'start'} className={styles.verticalTabs} open={tab}
+                      setOpen={index => {
+                          const url = { pathname: router.pathname, query: { tab: index } }
+                          router.push(url, url, {shallow: false})
+                      }}>
             <Tab label={'Button'} group={'Inputs'} className={styles.baseTab}>
                 <Article data={button()} className={styles.article}/>
             </Tab>
@@ -53,7 +67,9 @@ export default function components() {
             <Tab label={'Dropdown'} group={'Navigation'} className={styles.baseTab}>
                 <Article data={dropdown()} className={styles.article}/>
             </Tab>
-
+            <Tab label={'NavigationRail'} group={'Navigation'} className={styles.baseTab}>
+                <Article data={rail()} className={styles.article}/>
+            </Tab>
             <Tab label={'Tab - (coming soon)'} disabled={true} group={'Navigation'} className={styles.baseTab}>
                 <Empty customLabel={'Coming soon'}/>
             </Tab>
