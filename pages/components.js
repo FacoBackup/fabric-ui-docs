@@ -12,6 +12,7 @@ import Empty from "../components/core/feedback/empty/Empty";
 import rail from "../templates/components/navigation/rail";
 import {useEffect, useState} from "react";
 import {useRouter} from "next/router";
+import linechart from "../templates/components/visualization/linechart";
 
 export default function components() {
     const [tab, setTab] = useState(0)
@@ -104,18 +105,18 @@ export default function components() {
             </Tab>
 
 
-            <Tab label={'HorizontalChart - (coming soon)'} disabled={true} group={'Charts'} className={styles.baseTab}>
-                <Empty customLabel={'Coming soon'}/>
+            {/*<Tab label={'HorizontalChart - (coming soon)'} disabled={true} group={'Charts'} className={styles.baseTab}>*/}
+            {/*    <Empty customLabel={'Coming soon'}/>*/}
+            {/*</Tab>*/}
+            {/*<Tab label={'VerticalChart - (coming soon)'} disabled={true} group={'Charts'} className={styles.baseTab}>*/}
+            {/*    <Empty customLabel={'Coming soon'}/>*/}
+            {/*</Tab>*/}
+            <Tab label={'Chart'} group={'Charts'} className={styles.baseTab}>
+                <Article data={linechart()}/>
             </Tab>
-            <Tab label={'VerticalChart - (coming soon)'} disabled={true} group={'Charts'} className={styles.baseTab}>
-                <Empty customLabel={'Coming soon'}/>
-            </Tab>
-            <Tab label={'LineChart - (coming soon)'} disabled={true} group={'Charts'} className={styles.baseTab}>
-                <Empty customLabel={'Coming soon'}/>
-            </Tab>
-            <Tab label={'PieChart - (coming soon)'} disabled={true} group={'Charts'} className={styles.baseTab}>
-                <Empty customLabel={'Coming soon'}/>
-            </Tab>
+            {/*<Tab label={'PieChart - (coming soon)'} disabled={true} group={'Charts'} className={styles.baseTab}>*/}
+            {/*    <Empty customLabel={'Coming soon'}/>*/}
+            {/*</Tab>*/}
         </VerticalTabs>
     )
 }

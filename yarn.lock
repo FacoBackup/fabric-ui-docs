@@ -1112,10 +1112,10 @@ merge-stream@^2.0.0:
   resolved "https://registry.yarnpkg.com/merge-stream/-/merge-stream-2.0.0.tgz#52823629a14dd00c9770fb6ad47dc6310f2c1f60"
   integrity sha512-abv/qOcuPfk3URPfDzmZU1LKmuw8kT+0nIHvKrKgFrwifol/doWcdA4ZqsWQ8ENrFKkd67Mfpo/LovbIUsbt3w==
 
-mfc-core@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/mfc-core/-/mfc-core-1.1.1.tgz#f3b2d6047d48ca01310a00e563a9d504e6fb48b0"
-  integrity sha512-3rxQ7NPrPvPo1fQS1wsp3H0uDQX7ddDAuDK6AKL2hPBanwcjESnqjuBs74nEsoLDuunfGalH2qX02bDseOa9Xg==
+mfc-core@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/mfc-core/-/mfc-core-1.2.0.tgz#6997d301af002b7750ebbb172bd9f971df2e6f3b"
+  integrity sha512-yqNCeTLq7RYh11SReiljPn1tZNODKlfI6+OyTidUZDbE5ot7SeUhStjLHnwpJHBv9rln+fP333Ba9WApZEPTtw==
 
 miller-rabin@^4.0.0:
   version "4.0.1"

@@ -1,8 +1,6 @@
 import React from "react";
-import HorizontalChart from "../components/core/visualization/charts/horizontal/HorizontalChart";
-import PieChart from "../components/core/visualization/charts/pie/PieChart";
-import VerticalChart from "../components/core/visualization/charts/vertical/VerticalChart";
-import LineChart from "../components/core/visualization/charts/line/LineChart";
+
+import Chart from "../components/core/visualization/charts/Chart";
 
 
 export default function test() {
@@ -46,10 +44,8 @@ export default function test() {
             {/*    axis={{label: 'Si', field: 's'}}*/}
             {/*    data={randomSet(20)}*/}
             {/*    value={{label: 'Quantity', field: 'q'}}/>*/}
-            <LineChart
+            <Chart
                 title={'Titulo do gráfico'}
-                height={500}
-                width={500}
                 color={'#0095ff'}
                 axis={{label: 'Si', field: 's'}}
                 data={randomSet(12)}

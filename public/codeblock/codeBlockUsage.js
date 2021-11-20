@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {MfcWrapper, useFile} from 'mfc-core';
-import CodeBlock from "../../components/core/visualization/code_block/CodeBlock";
+import {MfcWrapper, useFile, CodeBlock} from 'mfc-core';
 
 function App() {
     const exampleJSFile= useFile('./example.js')

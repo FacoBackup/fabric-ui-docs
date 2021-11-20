@@ -1,6 +1,6 @@
 import {useRouter} from "next/router";
 import {useEffect, useRef, useState} from "react";
-import {Alert, Button, LineChart, SelectField, TextField, useCopyToClipboard} from "mfc-core";
+import {Alert, Button, Chart, SelectField, TextField, useCopyToClipboard} from "mfc-core";
 import ScrollStepper from "../components/core/navigation/scroll/ScrollStepper";
 import styles from "../styles/Overview.module.css";
 import StepperWrapper from "../components/core/navigation/scroll/StepperWrapper";
@@ -87,20 +87,6 @@ export default function index() {
                                     label='DateField'
                                     value={date}
                                     handleChange={(e) => setDate(e)}/>
-                                <SelectField
-                                    width={'100%'}
-                                    choices={[
-                                        {key: 0, value: 'Option 1'},
-                                        {key: 1, value: 'Option 2'}, {
-                                            key: 2,
-                                            value: 'Option 3'
-                                        }]}
-                                    label='DropDown'
-                                    value={drop}
-                                    placeholder={'DropDownField'}
-                                    handleChange={(e) => setDrop(e)}/>
-
-
                             </div>
                             <div className={styles.examplesWrapper} data-label={'Buttons'}
                                  style={{background: 'transparent', gap: '24px'}}>
@@ -124,19 +110,20 @@ export default function index() {
                                     available: true
                                 }} language={'json'}/>
 
-                                <LineChart
-                                    width={(width / 2) - 106}
-                                    title={'LineChart (coming soon)'}
+                                <Chart
+                                    styles={{height: '375px'}}
+                                    title={'Chart'}
                                     data={[
-                                        {value: 100, axis: "One hundred"},
-                                        {value: 50, axis: "One hundred / 2"},
-                                        {value: 25, axis: "One hundred / 4"},
-                                        {value: 5, axis: "Five"}
+                                        {value: 50, axis: "A1"},
+                                        {value: 50, axis: "A2"},
+                                        {value: 25, axis: "A3"},
+                                        {value: 5, axis: "A4"}
                                     ]}
                                     axis={{
                                         label: 'axis',
                                         field: 'axis'
-                                    }} value={{
+                                    }}
+                                    value={{
                                     label: 'value',
                                     field: 'value'
                                 }}/>
