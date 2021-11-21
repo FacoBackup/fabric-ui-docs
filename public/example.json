@@ -1,58 +1,57 @@
-
-  {
-    "AN-ARRAY-NUMBER": [
+{
+  "AN-ARRAY-NUMBER": [
+    1,
+    2,
+    3
+  ],
+  "AN-ARRAY-BOOL": [
+    true,
+    false
+  ],
+  "AN-ARRAY-STRING": [
+    "COFFEE",
+    "TEST"
+  ],
+  "AN-ARRAY-OBJECT": [
+    {},
+    {
+      "TEST": 1
+    },
+    {
+      "TEST-2": "1",
+      "AN-NESTED-ARRAY-ARRAY": [
+        [],
+        [
+          {
+            "TEST": 1
+          }
+        ],
+        [
+          [
+            "random array",
+            "COFFEE",
+            "TEST"
+          ],
+          1,
+          2,
+          3
+        ]
+      ]
+    }
+  ],
+  "AN-ARRAY-ARRAY": [
+    [],
+    [
+      {
+        "TEST": {
+          "TEST": []
+        }
+      }
+    ],
+    [
       1,
       2,
       3
-    ],
-    "AN-ARRAY-BOOL": [
-      true,
-      false
-    ],
-    "AN-ARRAY-STRING": [
-      "COFFEE",
-      "TEST"
-    ],
-    "AN-ARRAY-OBJECT": [
-      {},
-      {
-        "TEST": 1
-      },
-      {
-        "TEST-2": "1",
-        "AN-NESTED-ARRAY-ARRAY": [
-          [],
-          [
-            {
-              "TEST": 1
-            }
-          ],
-          [
-            [
-              "random array",
-              "COFFEE",
-              "TEST"
-            ],
-            1,
-            2,
-            3
-          ]
-        ]
-      }
-    ],
-    "AN-ARRAY-ARRAY": [
-      [],
-      [
-        {
-          "TEST": {
-            "TEST": []
-          }
-        }
-      ],
-      [
-        1,
-        2,
-        3
-      ]
     ]
-  }
+  ]
+}

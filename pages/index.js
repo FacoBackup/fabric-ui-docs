@@ -27,7 +27,7 @@ export default function index() {
                 MFC-core
             </div>
             <ScrollStepper className={styles.wrapper}>
-                <StepperWrapper styles={{width: '100vw', height: '100vh', left: 0}}>
+                <StepperWrapper styles={{width: '100vw'}}>
                     <div style={{display: 'flex'}}>
                         <div className={[styles.half, styles.title].join(' ')}>
                             A simple yet complete <b style={{color: '#0095ff'}}>React UI library</b>
@@ -71,7 +71,7 @@ export default function index() {
                         </div>
                     </div>
                 </StepperWrapper>
-                <StepperWrapper styles={{width: '100vw', height: '100vh'}}>
+                <StepperWrapper styles={{width: '100vw'}}>
                     <div style={{display: 'flex'}}>
                         <div className={[styles.half, styles.description].join(' ')}
                              style={{alignContent: 'space-between', padding: '32px'}}>
@@ -144,7 +144,7 @@ export default function index() {
                         </div>
                     </div>
                 </StepperWrapper>
-                <StepperWrapper styles={{width: '100vw', height: '100vh'}}>
+                <StepperWrapper styles={{width: '100vw'}}>
 
                     <div className={[styles.half, styles.title].join(' ')}
                          style={{fontSize: '2rem', width: '100%', gap: '32px'}}>

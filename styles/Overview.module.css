@@ -7,7 +7,7 @@
 }
 
 .half {
-    height: 100vh;
+    height:  calc(100vh - 35px);
     width: 50%;
     display: grid;
     justify-items: center;
