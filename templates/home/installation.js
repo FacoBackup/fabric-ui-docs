@@ -1,5 +1,5 @@
 import {useFile} from "mfc-core";
-import CodeBlock from "../../components/core/visualization/code_block/CodeBlock";
+// import CodeBlock from "../../components/core/visualization/code_block/CodeBlock";
 
 export default function installation() {
     const ex = useFile('./gs/example.js')

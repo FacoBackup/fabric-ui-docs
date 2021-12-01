@@ -1,29 +1,46 @@
-import React, {useEffect, useState} from "react";
+import React, {useMemo} from "react";
 
-import Chart from "../components/core/visualization/charts/Chart";
-import {request, useFile} from "mfc-core";
-import CodeBlock from "../components/core/visualization/code_block/CodeBlock";
-import Markdown from "../components/core/visualization/markdown/Markdown";
+// import VerticalBarChart from "../components/charts/charts/VerticalBarChart";
+import LineChart from "../components/charts/charts/LineChart";
+import VerticalBarChart from "../components/charts/charts/VerticalBarChart";
 
 
+const randomSet = (quantity) => {
+    let res = []
+    for (let i = 0; i < quantity; i++) {
+        res.push({axis: 'A' + i, value: Math.floor(Math.random() * (101))})
+    }
+
+    return res
+}
 export default function test() {
-    const [content, setContent] = useState('')
-    useEffect(() => {
-        request({
-            method: 'get',
-            url: 'https://raw.githubusercontent.com/FacoBackup/mfc-core/v1.x/docs/home.md'
-        }).then(r => setContent(r.data))
-    })
-
+    const data = useMemo(() => {
+        return randomSet(15)
+    }, [])
 
     return (
         <div style={{
             padding: '64px',
             boxSizing: 'border-box', width: '100%', height: '100%', overflowY: 'auto', overflowX: 'hidden',
             display: 'flex', flexFlow: 'row wrap', gap: '16px',
-            background: 'white'
+
         }}>
-           <Markdown data={content}/>
+            <LineChart
+                title={'Title here'}
+                color={'#0095ff'}
+                type={'line-chart'}
+                axis={{label: 'Axis', field: 'axis'}}
+                data={data}
+                value={{label: 'Value', field: 'value'}}
+            />
+            <VerticalBarChart
+                title={'Title here'}
+                color={'#0095ff'}
+                type={'line-chart'}
+                axis={{label: 'Axis', field: 'axis'}}
+                data={data}
+                value={{label: 'Value', field: 'value'}}
+            />
         </div>
     )
 }

@@ -8,12 +8,15 @@
 
 .half {
     height:  calc(100vh - 35px);
+    overflow-x: hidden;
+    overflow-y: auto;
     width: 50%;
     display: grid;
     justify-items: center;
     align-items: center;
     align-content: center;
-    overflow: hidden;
+
+
 }
 
 .title {
@@ -24,14 +27,14 @@
 
 .npmLink {
     border-radius: 5px;
-    border: var(--mfc-border-secondary) 1px solid;
+    border: var(--fabric-border-secondary) 1px solid;
     padding: 16px;
     text-decoration: none;
     display: flex;
     align-items: center;
     gap: 8px;
     color: white;
-    /*background: var(--mfc-background-tertiary);*/
+    /*background: var(--fabric-background-tertiary);*/
     font-weight: bold;
     background: #0095ff;
     font-size: 1.1rem;
@@ -39,10 +42,12 @@
 }
 
 .description {
-    align-items: flex-start;
-    background: var(--mfc-background-primary);
+    /*align-items: flex-start;*/
+    gap: 16px !important;
+    background: var(--fabric-background-primary);
     border-radius: 5px;
-    border: var(--mfc-border-primary) 1px solid;
+    border: var(--fabric-border-primary) 1px solid;
+
 }
 
 .links {
@@ -52,19 +57,22 @@
     align-items: center;
     font-weight: bold;
     font-size: 1.1rem;
-    color: var(--mfc-color-secondary);
+    color: var(--fabric-color-secondary);
 }
 
 
 .examplesWrapper {
-    background: var(--mfc-background-tertiary);
+    background: var(--fabric-background-tertiary);
     border-radius: 8px;
-    border: var(--mfc-border-primary) 1px solid;
+    border: var(--fabric-border-primary) 1px solid;
     padding: 8px;
     width: 100%;
     display: flex;
     flex-flow: row wrap;
     position: relative;
+
+    margin-bottom: 32px;
+
 }
 
 .examplesWrapper::before {
@@ -73,13 +81,13 @@
     top: calc(-1rem - 8px);
     font-size: 1rem;
     font-weight: bold;
-    color: var(--mfc-color-secondary);
+    color: var(--fabric-color-secondary);
 }
 
 .logoWrapper{
     display: flex;
-    background: var(--mfc-background-primary);
-    border: var(--mfc-border-primary) 1px solid;
+    background: var(--fabric-background-primary);
+    border: var(--fabric-border-primary) 1px solid;
     height: 35px;
     align-items: center;
     justify-content: center;
@@ -87,7 +95,7 @@
 
     font-weight: 600;
     font-size: .9rem;
-    color: var(--mfc-color-secondary);
+    color: var(--fabric-color-secondary);
 
     position: sticky;
     top: 0;

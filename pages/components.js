@@ -1,22 +1,29 @@
 import styles from "../styles/Home.module.css";
-import button from "../templates/components/inputs/button";
-import datefield from "../templates/components/inputs/datefield";
-// import {Empty} from "mfc-core";
-import CodeBlock from "../components/core/visualization/code_block/CodeBlock";
-import Article from "../components/core/visualization/article/Article";
-import codeblock from "../templates/components/visualization/codeblock";
 import VerticalTabs from "../components/core/navigation/tabs/VerticalTabs";
-import dropdown from "../templates/components/navigation/dropdown";
 import Tab from "../components/core/navigation/tabs/Tab";
 import Empty from "../components/core/feedback/empty/Empty";
-import rail from "../templates/components/navigation/rail";
 import {useEffect, useState} from "react";
 import {useRouter} from "next/router";
-import linechart from "../templates/components/visualization/linechart";
+import useGithubFile from "../components/markedown-src/hooks/useGithubFile";
+import {Markdown} from "../components/markedown-src";
 
 export default function components() {
     const [tab, setTab] = useState(0)
     const router = useRouter()
+
+    const mfcWrapper = useGithubFile({
+        user: 'FacoBackup',
+        repo: 'mfc-core',
+        branch: 'v1.x',
+        filePath: 'docs/mfc_wrapper.md'
+    })
+
+    const button = useGithubFile({
+        user: 'FacoBackup',
+        repo: 'mfc-core',
+        branch: 'v1.x',
+        filePath: 'docs/button.md'
+    })
 
     useEffect(() => {
         const t = router.query.tab
@@ -26,11 +33,18 @@ export default function components() {
     return (
         <VerticalTabs align={'start'} className={styles.verticalTabs} open={tab}
                       setOpen={index => {
-                          const url = { pathname: router.pathname, query: { tab: index } }
+                          const url = {pathname: router.pathname, query: {tab: index}}
                           router.push(url, url, {shallow: false})
                       }}>
+            <Tab label={'MfcWrapper'} className={styles.baseTab}>
+                <div className={styles.markdownWrapper}>
+                    <Markdown data={mfcWrapper}/>
+                </div>
+            </Tab>
             <Tab label={'Button'} group={'Inputs'} className={styles.baseTab}>
-                <Article data={button()} className={styles.article}/>
+                <div className={styles.markdownWrapper}>
+                    <Markdown data={button}/>
+                </div>
             </Tab>
 
             <Tab label={'Checkbox - (coming soon)'} disabled={true} group={'Inputs'} className={styles.baseTab}>
@@ -42,7 +56,8 @@ export default function components() {
                 <Empty customLabel={'Coming soon'}/>
             </Tab>
             <Tab label={'DateField'} group={'Inputs'} className={styles.baseTab}>
-                <Article data={datefield()} className={styles.article}/>
+                <Empty customLabel={'Coming soon'}/>
+                {/*<Article data={datefield()} className={styles.article}/>*/}
             </Tab>
             <Tab label={'Multiselect - (coming soon)'} disabled={true} group={'Inputs'} className={styles.baseTab}>
                 {/*<Article data={multiselect()} className={styles.article}/>*/}
@@ -66,10 +81,12 @@ export default function components() {
             </Tab>
 
             <Tab label={'Dropdown'} group={'Navigation'} className={styles.baseTab}>
-                <Article data={dropdown()} className={styles.article}/>
+                <Empty customLabel={'Coming soon'}/>
+                {/*<Article data={dropdown()} className={styles.article}/>*/}
             </Tab>
             <Tab label={'NavigationRail'} group={'Navigation'} className={styles.baseTab}>
-                <Article data={rail()} className={styles.article}/>
+                <Empty customLabel={'Coming soon'}/>
+                {/*<Article data={rail()} className={styles.article}/>*/}
             </Tab>
             <Tab label={'Tab - (coming soon)'} disabled={true} group={'Navigation'} className={styles.baseTab}>
                 <Empty customLabel={'Coming soon'}/>
@@ -87,16 +104,6 @@ export default function components() {
                 <Empty customLabel={'Coming soon'}/>
             </Tab>
 
-            <Tab label={'CodeBlock'} group={'Visualization'} className={styles.baseTab}>
-                <Article data={codeblock()} className={styles.article}/>
-            </Tab>
-
-            <Tab label={'List - (coming soon)'} disabled={true} group={'Visualization'} className={styles.baseTab}>
-                <Empty customLabel={'Coming soon'}/>
-            </Tab>
-            <Tab label={'Article - (coming soon)'} disabled={true} group={'Visualization'} className={styles.baseTab}>
-                <Empty customLabel={'Coming soon'}/>
-            </Tab>
             <Tab label={'Feed - (coming soon)'} disabled={true} group={'Visualization'} className={styles.baseTab}>
                 <Empty customLabel={'Coming soon'}/>
             </Tab>
@@ -112,7 +119,7 @@ export default function components() {
             {/*    <Empty customLabel={'Coming soon'}/>*/}
             {/*</Tab>*/}
             <Tab label={'Chart'} group={'Charts'} className={styles.baseTab}>
-                <Article data={linechart()}/>
+                <Empty customLabel={'Coming soon'}/>
             </Tab>
             {/*<Tab label={'PieChart - (coming soon)'} disabled={true} group={'Charts'} className={styles.baseTab}>*/}
             {/*    <Empty customLabel={'Coming soon'}/>*/}

@@ -1,5 +1,5 @@
 .wrapper {
-    background: var(--mfc-background-secondary);
+    background: var(--fabric-background-secondary);
     /*display: grid;*/
 
     display: flex;
@@ -27,9 +27,11 @@
     justify-content: center;
     justify-items: center;
     gap: 4px;
-    color: var(--mfc-color-secondary);
-    font-size: .9rem;
+    color: var(--fabric-color-secondary);
+    font-size: .8rem;
     font-weight: bold;
+
+
 }
 
 .bars {
@@ -55,7 +57,7 @@
     align-content: stretch;
     /*flex-grow: 1;*/
     /*align-content: stretch;*/
-    background: var(--mfc-background-secondary);
+    background: var(--fabric-background-secondary);
     height: 100vh;
     width: 100vw;
 }
@@ -75,7 +77,6 @@
     max-height: 100%;
 
     width: 100%;
-    padding: 8px;
     overflow-y: auto;
 }
 
@@ -97,13 +98,22 @@
 }
 
 .baseTab {
-    padding: 0 0 0 10%;
+    background-color: var(--fabric-background-primary);
+
+    padding: 8px calc(10% - 32px);
     display: flex;
     flex-direction: column;
     /*margin-top: 16px;*/
-    overflow-y: hidden;
+    overflow-y: auto;
     height: 100%;
     width: 100%;
+}
+
+.markdownWrapper{
+    border: var(--fabric-border-primary) 1px solid;
+    border-radius: 5px;
+    background: var(--fabric-background-primary);
+    padding: 0 16px;
 }
 
 .article {

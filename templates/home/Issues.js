@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {request} from "mfc-core";
 import Feed from "../../components/core/visualization/feed/Feed";
-import news from "./news";
 import FeedCard from "../../components/core/visualization/feed/FeedCard";
 
 export default function Issues() {

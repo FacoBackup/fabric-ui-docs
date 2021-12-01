@@ -4,12 +4,14 @@ import {useEffect, useState} from "react";
 import {useRouter} from 'next/router';
 import "@fontsource/roboto";
 
-import {Button, MfcWrapper, ToolTip} from "mfc-core";
 import Cookies from "universal-cookie/lib";
 import RailActionButton from "../components/core/navigation/rail/RailActionButton";
 import NavigationRail from "../components/core/navigation/rail/NavigationRail";
 import RailActionWrapper from "../components/core/navigation/rail/RailActionWrapper";
-
+import Fabric from "../components/core/misc/theme/Fabric";
+import ToolTip from "../components/core/feedback/tooltip/ToolTip";
+import Button from "../components/core/inputs/button/Button";
+import Head from 'next/head'
 const cookies = new Cookies()
 
 function Mfc({Component, pageProps}) {
@@ -35,19 +37,24 @@ function Mfc({Component, pageProps}) {
             setLoading(false)
         })
 
-        console.log(loading)
     })
 
     return (
-        <MfcWrapper onDark={dark} className={styles.wrapper}>
+        <Fabric onDark={dark} className={styles.wrapper}>
+            <Head>
+                <title>
+                    Fabric UI
+                </title>
+                <link rel="icon" href={"/favicon.svg"} type="image/x-icon" sizes={'64x64'}/>
+            </Head>
             <div className={styles.contentWrapper}>
                 {router.pathname !== '/' ? (
                         <NavigationRail>
                             <RailActionWrapper className={styles.appName} place={"start"}>
-                                <img src='./react-logo.png' alt={'react'} style={{width: '100%'}}/>
-                                MFC
+                                <img src={dark ? './favicon_light.svg' : './favicon.svg'} alt={'react'} style={{width: '100%', padding: '8px', maxHeight: '60px'}}/>
+                                {/*Fabric UI*/}
                                 <ToolTip justify={'end'} align={'middle'}
-                                         content={'MFC doesn\'t really mean anything yet'}/>
+                                         content={'Fabric UI'}/>
                             </RailActionWrapper>
                             <RailActionButton
                                 icon={<span className="material-icons-round">home</span>}
@@ -61,20 +68,29 @@ function Mfc({Component, pageProps}) {
                             <RailActionButton icon={<span className="material-icons-round">code</span>} label={'APIs'}
                                               highlight={router.pathname === '/apis'} onClick={() => router.push('/apis')}
                                               disabled={true}/>
+                            <RailActionWrapper place={"end"}>
+                                <RailActionButton
+                                    icon={<span><img src={'./github/32.png'} style={{width: '16px', height: '16px'}}
+                                                     alt={'Github'}/></span>}
+                                    label={'Github'}
+                                    highlight={router.pathname === '/apis'}
+                                    onClick={() => window.open('https://github.com/FacoBackup/fabric-ui')}
+                                />
+                            </RailActionWrapper>
+
                             <RailActionWrapper place={'end'}>
-                                <Button
+                                <RailActionButton
                                     onClick={() => setTheme(!dark)}
                                     className={styles.button}
-                                >
-                                    {dark ?
+                                    icon={dark ?
                                         <span className="material-icons-round">brightness_3</span>
                                         :
                                         <span className="material-icons-round">brightness_high</span>}
-                                    Theme
-
-                                </Button>
+                                    label={'Theme'}
+                                />
                                 <ToolTip justify={'end'} align={'middle'} content={'Theme'}/>
                             </RailActionWrapper>
+
                         </NavigationRail>
                     )
                     :
@@ -83,7 +99,7 @@ function Mfc({Component, pageProps}) {
                 <Component {...pageProps} />
             </div>
 
-        </MfcWrapper>
+        </Fabric>
     )
 }
 

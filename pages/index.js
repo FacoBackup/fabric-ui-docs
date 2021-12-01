@@ -1,25 +1,20 @@
 import {useRouter} from "next/router";
-import {useEffect, useRef, useState} from "react";
-import {Alert, Button, Chart, SelectField, TextField, useCopyToClipboard} from "mfc-core";
+import {useRef, useState} from "react";
+import {Alert, Button, Chart, TextField, useCopyToClipboard} from "mfc-core";
 import ScrollStepper from "../components/core/navigation/scroll/ScrollStepper";
 import styles from "../styles/Overview.module.css";
 import StepperWrapper from "../components/core/navigation/scroll/StepperWrapper";
 import DateField from "../components/core/inputs/date/DateField";
-import CodeBlock from "../components/core/visualization/code_block/CodeBlock";
 
 export default function index() {
     const router = useRouter()
     const ref = useRef()
     const [input, setInput] = useState()
     const [date, setDate] = useState()
-    const [drop, setDrop] = useState()
-    const [width, setWidth] = useState(0)
-    useEffect(() => {
-        setWidth(ref.current.offsetWidth)
-    }, [])
 
     const copy = useCopyToClipboard()
     const [success, setSuccess] = useState(null)
+
     return (
         <div style={{width: '100vw', height: '100vh'}} ref={ref}>
             <div className={styles.logoWrapper}>
@@ -73,8 +68,7 @@ export default function index() {
                 </StepperWrapper>
                 <StepperWrapper styles={{width: '100vw'}}>
                     <div style={{display: 'flex'}}>
-                        <div className={[styles.half, styles.description].join(' ')}
-                             style={{alignContent: 'space-between', padding: '32px'}}>
+                        <div className={[styles.half, styles.description].join(' ')} style={{display: 'flex',flexDirection: 'column', gap: '16px', padding: '32px'}}>
 
                             <div className={styles.examplesWrapper} data-label={'Inputs'}>
                                 <TextField
@@ -104,14 +98,8 @@ export default function index() {
 
                             <div className={styles.examplesWrapper} data-label={'Data visualization'}
                                  style={{background: 'transparent'}}>
-                                <CodeBlock data={{
-                                    component: 'CodeBlock',
-                                    objective: 'Highlight your data or code.',
-                                    available: true
-                                }} language={'json'}/>
-
                                 <Chart
-                                    styles={{height: '375px'}}
+                                    styles={{height: '500px'}}
                                     title={'Chart'}
                                     data={[
                                         {value: 50, axis: "A1"},

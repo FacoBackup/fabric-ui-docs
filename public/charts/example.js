@@ -1,6 +1,6 @@
-import React, {useMemo, useState} from 'react';
+import React, {useMemo} from 'react';
 import ReactDOM from 'react-dom';
-import {MfcWrapper, useFile, Chart} from 'mfc-core';
+import {Chart, MfcWrapper} from 'mfc-core';
 
 const randomSet = (quantity) => {
     let res = []

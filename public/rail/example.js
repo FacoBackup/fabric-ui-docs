@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Button, MfcWrapper} from 'mfc-core';
+import {MfcWrapper} from 'mfc-core';
 import NavigationRail from "../../components/core/navigation/rail/NavigationRail";
 import RailActionWrapper from "../../components/core/navigation/rail/RailActionWrapper";
 import RailActionButton from "../../components/core/navigation/rail/RailActionButton";

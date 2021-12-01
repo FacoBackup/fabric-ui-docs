@@ -1,6 +1,6 @@
-import {Button} from "mfc-core";
+import {Button, useFile} from "mfc-core";
 import CodeBlock from "../../../components/core/visualization/code_block/CodeBlock";
-import {useFile} from "mfc-core";
+
 export default function button() {
     const minimal = useFile('./button/minimal.js')
     const defaultEx = useFile('./button/default.js')
