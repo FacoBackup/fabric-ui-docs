@@ -1,5 +1,5 @@
 {
-  "name": "mfc-documentation",
+  "name": "fabric-ui-docs",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -10,7 +10,9 @@
   "dependencies": {
     "@fontsource/roboto": "^4.5.1",
     "axios": "^0.24.0",
-    "mfc-core": "^1.2.0",
+    "@f-ui/core": "latest",
+    "@f-ui/charts": "latest",
+    "@f-ui/markdown": "latest",
     "next": "12.0.3",
     "prop-types": "^15.7.2",
     "react": "17.0.2",
@@ -18,5 +20,8 @@
     "react-input-mask": "^2.0.4",
     "universal-cookie": "^4.0.4"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "eslint": "^8.4.0",
+    "eslint-plugin-react": "^7.27.1"
+  }
 }

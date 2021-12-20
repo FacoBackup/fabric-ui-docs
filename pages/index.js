@@ -1,159 +1,86 @@
-import {useRouter} from "next/router";
 import {useRef, useState} from "react";
-import {Alert, Button, Chart, TextField, useCopyToClipboard} from "mfc-core";
-import ScrollStepper from "../components/core/navigation/scroll/ScrollStepper";
+import {Alert, Button, ScrollStepper, StepperWrapper, useCopyToClipboard} from "@f-ui/core";
 import styles from "../styles/Overview.module.css";
-import StepperWrapper from "../components/core/navigation/scroll/StepperWrapper";
-import DateField from "../components/core/inputs/date/DateField";
+import {useRouter} from "next/router";
+
 
 export default function index() {
-    const router = useRouter()
     const ref = useRef()
-    const [input, setInput] = useState()
-    const [date, setDate] = useState()
-
+    const router = useRouter()
     const copy = useCopyToClipboard()
     const [success, setSuccess] = useState(null)
 
     return (
         <div style={{width: '100vw', height: '100vh'}} ref={ref}>
-            <div className={styles.logoWrapper}>
-                <img src={'./react-logo.png'} alt={'React'} style={{height: '100%'}}/>
-                MFC-core
-            </div>
+
             <ScrollStepper className={styles.wrapper}>
                 <StepperWrapper styles={{width: '100vw'}}>
-                    <div style={{display: 'flex'}}>
-                        <div className={[styles.half, styles.title].join(' ')}>
+                    <div style={{
+                        display: 'grid',
+                        justifyItems: 'center',
+                        width: '100%',
+                        height: '100vh',
+                        alignContent: 'center',
+                        gap: '10vh'
+                    }}>
+                        <img src={'./big_ico.svg'} alt={'logo'} style={{maxWidth: '400px'}}/>
+                        <h1 className={styles.title}>
                             A simple yet complete <b style={{color: '#0095ff'}}>React UI library</b>
-                        </div>
-                        <div className={[styles.half, styles.description].join(' ')} style={{gap: '64px'}}>
+                        </h1>
+                        <div style={{display: 'flex', gap: '32px'}}>
                             <Button
                                 className={styles.npmLink}
                                 variant={'outlined'}
-                                styles={{background: 'var(--mfc-background-secondary)'}}
-                                onClick={() => setSuccess(copy('npm i mfc-core'))}>
-                                $ npm i mfc-core
+                                onClick={() => setSuccess(copy('npm i @f-ui/core'))}>
+                                $ npm i @f-ui/core
                                 <span className="material-icons-round" style={{fontSize: '1.2rem'}}>content_copy</span>
                             </Button>
-
-                            <Alert
-                                variant={success ? 'success' : 'alert'}
-                                handleClose={() => {
-                                    setSuccess(null)
-                                }}
-                                open={success !== null}
-                                delay={3000}>
-                                {success ? 'Copied' : 'Some error occurred during copy'}
-                            </Alert>
-
-                            <Button className={styles.npmLink} variant={'filled'} onClick={() => router.push('/home')}>
-
-                                Get started
-                                <span className={'material-icons-round'} style={{fontSize: '1.2rem'}}>
-                            arrow_forward_ios
-                        </span>
-                            </Button>
-
-                            <Button className={styles.npmLink} variant={'outlined'} onClick={() => {
-                                ref.current.childNodes[1].scroll(0, document.body.offsetHeight)
-                            }}>
-                                Show me more
-                                <span className={'material-icons-round'}>
-                                    expand_more
-                                </span>
-                            </Button>
-                        </div>
-                    </div>
-                </StepperWrapper>
-                <StepperWrapper styles={{width: '100vw'}}>
-                    <div style={{display: 'flex'}}>
-                        <div className={[styles.half, styles.description].join(' ')} style={{display: 'flex',flexDirection: 'column', gap: '16px', padding: '32px'}}>
-
-                            <div className={styles.examplesWrapper} data-label={'Inputs'}>
-                                <TextField
-                                    width={'100%'}
-                                    noMargin={true}
-                                    label='Text' value={input} placeholder={'TextField'}
-                                    handleChange={(e) => setInput(e.target.value)}/>
-                                <DateField
-                                    width={'100%'}
-                                    label='DateField'
-                                    value={date}
-                                    handleChange={(e) => setDate(e)}/>
-                            </div>
-                            <div className={styles.examplesWrapper} data-label={'Buttons'}
-                                 style={{background: 'transparent', gap: '24px'}}>
-                                <Button styles={{width: 'calc(33.333% - 16px)'}}>
-                                    Default
-                                </Button>
-                                <Button styles={{width: 'calc(33.333% - 16px)'}} variant={'outlined'}>
-                                    Outlined
-                                </Button>
-                                <Button styles={{width: 'calc(33.333% - 16px)'}} variant={"filled"}>
-                                    Filled
-                                </Button>
-                            </div>
-
-
-                            <div className={styles.examplesWrapper} data-label={'Data visualization'}
-                                 style={{background: 'transparent'}}>
-                                <Chart
-                                    styles={{height: '500px'}}
-                                    title={'Chart'}
-                                    data={[
-                                        {value: 50, axis: "A1"},
-                                        {value: 50, axis: "A2"},
-                                        {value: 25, axis: "A3"},
-                                        {value: 5, axis: "A4"}
-                                    ]}
-                                    axis={{
-                                        label: 'axis',
-                                        field: 'axis'
-                                    }}
-                                    value={{
-                                    label: 'value',
-                                    field: 'value'
-                                }}/>
-                            </div>
-                        </div>
-                        <div className={[styles.half, styles.title].join(' ')} style={{fontSize: '2rem'}}>
-                            Developed to maximize your <b style={{color: '#0095ff'}}> productivity</b>
                             <Button
-                                onClick={() => router.push('/components')}
-                                variant={'filled'} className={styles.npmLink}
-                                styles={{marginTop: '64px'}}
-                            >
-                                Check out the full list
-                                <span className={'material-icons-round'} style={{fontSize: '1.2rem'}}>
-                        arrow_forward_ios
-                    </span>
+                                className={styles.npmLink}
+                                variant={'filled'}
+                                onClick={() => router.push('/home')}>
+                                Get started
+                                <span className="material-icons-round"
+                                      style={{fontSize: '1.2rem'}}>arrow_forward_ios</span>
                             </Button>
                         </div>
+                        <Alert
+                            variant={success ? 'success' : 'alert'}
+                            handleClose={() => {
+                                setSuccess(null)
+                            }}
+                            open={success !== null}
+                            delay={3000}>
+                            {success ? 'Copied' : 'Some error occurred during copy'}
+                        </Alert>
                     </div>
                 </StepperWrapper>
-                <StepperWrapper styles={{width: '100vw'}}>
 
-                    <div className={[styles.half, styles.title].join(' ')}
-                         style={{fontSize: '2rem', width: '100%', gap: '32px'}}>
-                        <div>Links to the <b style={{color: '#0095ff'}}>mfc-core</b> sources</div>
+                <StepperWrapper styles={{width: '100vw', height: '100vh'}}>
+
+                    <div style={{
+                        display: 'grid',
+                        justifyItems: 'center',
+                        width: '100%',
+                        height: '100vh',
+                        alignContent: 'center',
+                        gap: '10vh'
+                    }}>
+                        <h1 className={styles.title}>Useful links</h1>
                         <div className={styles.links}>
                             <Button
                                 variant={'outlined'}
-                                styles={{background: 'var(--mfc-background-primary)'}}
                                 className={styles.npmLink}
-                                onClick={() => window.open('https://www.npmjs.com/package/mfc-core')}
+                                onClick={() => window.open('https://www.npmjs.com/org/f-ui?activeTab=packages')}
                             >
-                                Check out NPM page
+                                Available packages (NPM)
                             </Button>
                             <Button
                                 variant={'outlined'}
-                                styles={{background: 'var(--mfc-background-primary)'}}
                                 className={styles.npmLink}
-                                onClick={() => window.open('https://github.com/FacoBackup/mfc-core')}
+                                onClick={() => window.open('https://github.com/fabric-ui')}
                             >
-                                Check out the GitHub Repository
-
+                                Github organization
                             </Button>
                         </div>
                     </div>

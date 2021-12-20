@@ -1,19 +1,21 @@
-import Feed from "../../components/core/visualization/feed/Feed";
-import FeedCard from "../../components/core/visualization/feed/FeedCard";
 import news from "./news";
 import React from 'react'
+import {Card, Masonry} from "@f-ui/core";
 
 export default function NewsPage() {
     return (
-        <Feed title={'Changes & News'}>
-            {news.map((e, i) => (
-                <React.Fragment key={'news-' + i}>
-                    <FeedCard
-                        onClick={() => null}
-                        {...e}
-                    />
-                </React.Fragment>
-            ))}
-        </Feed>
+        <Masonry  width={'100%'} title={'Cafe'} >
+            <>
+                {news.map((e, i) => (
+                    <React.Fragment key={'news-' + i}>
+                        <Card
+
+                        >
+                            Cafe
+                        </Card>
+                    </React.Fragment>
+                ))}
+            </>
+        </Masonry>
     )
 }

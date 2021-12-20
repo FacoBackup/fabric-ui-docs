@@ -7,7 +7,8 @@
 }
 
 .half {
-    height:  calc(100vh - 35px);
+
+    text-align: center;
     overflow-x: hidden;
     overflow-y: auto;
     width: 50%;
@@ -23,10 +24,12 @@
     font-weight: bold;
     /*width: ;*/
     font-size: 3rem;
+    margin: 0;
 }
 
 .npmLink {
     border-radius: 5px;
+
     border: var(--fabric-border-secondary) 1px solid;
     padding: 16px;
     text-decoration: none;
@@ -34,7 +37,7 @@
     align-items: center;
     gap: 8px;
     color: white;
-    /*background: var(--fabric-background-tertiary);*/
+    background: var(--fabric-background-primary) !important;
     font-weight: bold;
     background: #0095ff;
     font-size: 1.1rem;
@@ -84,7 +87,7 @@
     color: var(--fabric-color-secondary);
 }
 
-.logoWrapper{
+.logoWrapper {
     display: flex;
     background: var(--fabric-background-primary);
     border: var(--fabric-border-primary) 1px solid;

@@ -5,29 +5,26 @@ import {useRouter} from 'next/router';
 import "@fontsource/roboto";
 
 import Cookies from "universal-cookie/lib";
-import RailActionButton from "../components/core/navigation/rail/RailActionButton";
-import NavigationRail from "../components/core/navigation/rail/NavigationRail";
-import RailActionWrapper from "../components/core/navigation/rail/RailActionWrapper";
-import Fabric from "../components/core/misc/theme/Fabric";
-import ToolTip from "../components/core/feedback/tooltip/ToolTip";
-import Button from "../components/core/inputs/button/Button";
+import {Fabric, NavigationRail, RailActionButton, RailActionWrapper, ToolTip} from "@f-ui/core";
+
 import Head from 'next/head'
+
 const cookies = new Cookies()
 
-function Mfc({Component, pageProps}) {
+export default function App({Component, pageProps}) {
     const [loading, setLoading] = useState(false)
-    const [dark, setDark] = useState(false)
+    const [dark, setDark] = useState(true)
     const setTheme = (value) => {
         setDark(value)
-        cookies.remove('mfc-theme', {path: '/en'})
-        cookies.set('mfc-theme', value ? 0 : 1, {path: '/en'})
-        cookies.remove('mfc-theme', {path: '/'})
-        cookies.set('mfc-theme', value ? 0 : 1, {path: '/'})
+        cookies.remove('fabric-theme', {path: '/en'})
+        cookies.set('fabric-theme', value ? 0 : 1, {path: '/en'})
+        cookies.remove('fabric-theme', {path: '/'})
+        cookies.set('fabric-theme', value ? 0 : 1, {path: '/'})
     }
     const router = useRouter()
     useEffect(() => {
-        console.log(cookies.get('mfc-theme'), 'cookie')
-        setDark(cookies.get('mfc-theme') === '0')
+
+        setDark(cookies.get('fabric-theme') === '0')
     }, [])
     useEffect(() => {
         router.events.on('routeChangeStart', () => {
@@ -40,7 +37,7 @@ function Mfc({Component, pageProps}) {
     })
 
     return (
-        <Fabric onDark={dark} className={styles.wrapper}>
+        <Fabric theme={dark ? 'dark' : 'light'} className={styles.wrapper}>
             <Head>
                 <title>
                     Fabric UI
@@ -51,7 +48,8 @@ function Mfc({Component, pageProps}) {
                 {router.pathname !== '/' ? (
                         <NavigationRail>
                             <RailActionWrapper className={styles.appName} place={"start"}>
-                                <img src={dark ? './favicon_light.svg' : './favicon.svg'} alt={'react'} style={{width: '100%', padding: '8px', maxHeight: '60px'}}/>
+                                <img src={dark ? './favicon_light.svg' : './favicon.svg'} alt={'react'}
+                                     style={{width: '100%', padding: '8px', maxHeight: '60px'}}/>
                                 {/*Fabric UI*/}
                                 <ToolTip justify={'end'} align={'middle'}
                                          content={'Fabric UI'}/>
@@ -103,4 +101,3 @@ function Mfc({Component, pageProps}) {
     )
 }
 
-export default Mfc

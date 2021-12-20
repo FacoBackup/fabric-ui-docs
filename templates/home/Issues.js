@@ -1,15 +1,15 @@
 import React, {useEffect, useState} from "react";
-import {request} from "mfc-core";
-import Feed from "../../components/core/visualization/feed/Feed";
-import FeedCard from "../../components/core/visualization/feed/FeedCard";
+import {Card, Masonry} from "@f-ui/core";
+import axios from "axios";
+
 
 export default function Issues() {
     const [issues, setIssues] = useState([])
 
     useEffect(() => {
-        request({
+        axios({
             method: 'get',
-            url: 'https://api.github.com/repos/facobackup/mfc-core/issues',
+            url: 'https://api.github.com/repos/facobackup/fabric-ui/issues',
             package: {
                 per_page: 35
             }
@@ -39,10 +39,10 @@ export default function Issues() {
 
 
     return (
-        <Feed title={'Issues'}>
+        <Masonry title={'Issues'}>
             {issues.map((e, i) => (
                 <React.Fragment key={'news-' + i}>
-                    <FeedCard
+                    <Card
                         onClick={() => window.open(e.url)}
                         description={e.body}
                         title={e.title}
@@ -50,6 +50,6 @@ export default function Issues() {
                     />
                 </React.Fragment>
             ))}
-        </Feed>
+        </Masonry>
     )
 }
